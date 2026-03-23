@@ -29,75 +29,73 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.MenuBG = new System.Windows.Forms.PictureBox();
+            this.SeatNoLabel = new System.Windows.Forms.Label();
+            this.OrderList = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ConfirmButton = new System.Windows.Forms.Button();
+            this.CallStaffButton = new System.Windows.Forms.Button();
+            this.FoodMenu02 = new System.Windows.Forms.PictureBox();
+            this.FoodMenu03 = new System.Windows.Forms.PictureBox();
+            this.FoodMenu04 = new System.Windows.Forms.PictureBox();
+            this.FoodMenu05 = new System.Windows.Forms.PictureBox();
+            this.TotalYenLabel = new System.Windows.Forms.Label();
             this.MenuTab1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.MenuTab2 = new System.Windows.Forms.Button();
+            this.MenuTab3 = new System.Windows.Forms.Button();
+            this.MenuTab4 = new System.Windows.Forms.Button();
+            this.MenuTab5 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.Menu01Label = new System.Windows.Forms.Label();
+            this.Menu02Label = new System.Windows.Forms.Label();
+            this.Menu03Label = new System.Windows.Forms.Label();
+            this.Menu04Label = new System.Windows.Forms.Label();
+            this.Menu05Label = new System.Windows.Forms.Label();
+            this.MenuName = new System.Windows.Forms.TextBox();
+            this.NowOrderButton = new System.Windows.Forms.Button();
+            this.OrderedListButton = new System.Windows.Forms.Button();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.FoodMenu01 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.MenuBG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu02)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu03)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu04)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu05)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu01)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // MenuBG
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.pictureBox1.Location = new System.Drawing.Point(-8, -4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1280, 690);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.MenuBG.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuBG.BackgroundImage")));
+            this.MenuBG.Location = new System.Drawing.Point(-8, 67);
+            this.MenuBG.Name = "MenuBG";
+            this.MenuBG.Size = new System.Drawing.Size(913, 512);
+            this.MenuBG.TabIndex = 7;
+            this.MenuBG.TabStop = false;
             // 
-            // pictureBox8
+            // SeatNoLabel
             // 
-            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
-            this.pictureBox8.Location = new System.Drawing.Point(-8, 67);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(1073, 512);
-            this.pictureBox8.TabIndex = 7;
-            this.pictureBox8.TabStop = false;
+            this.SeatNoLabel.AutoSize = true;
+            this.SeatNoLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.SeatNoLabel.Font = new System.Drawing.Font("メイリオ", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.SeatNoLabel.Location = new System.Drawing.Point(27, 606);
+            this.SeatNoLabel.Name = "SeatNoLabel";
+            this.SeatNoLabel.Size = new System.Drawing.Size(209, 55);
+            this.SeatNoLabel.TabIndex = 10;
+            this.SeatNoLabel.Text = "席番号９９";
             // 
-            // label1
+            // OrderList
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Font = new System.Drawing.Font("メイリオ", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(27, 606);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 55);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "席番号９９";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(1071, 67);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(180, 436);
-            this.listBox1.TabIndex = 11;
+            this.OrderList.FormattingEnabled = true;
+            this.OrderList.ItemHeight = 12;
+            this.OrderList.Location = new System.Drawing.Point(911, 107);
+            this.OrderList.Name = "OrderList";
+            this.OrderList.ScrollAlwaysVisible = true;
+            this.OrderList.Size = new System.Drawing.Size(223, 340);
+            this.OrderList.TabIndex = 11;
             // 
             // label2
             // 
@@ -112,91 +110,83 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.HighlightText;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(1089, 43);
+            this.label3.Location = new System.Drawing.Point(943, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 21);
             this.label3.TabIndex = 13;
             this.label3.Text = "注文カゴの中身";
             // 
-            // button1
+            // ConfirmButton
             // 
-            this.button1.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(1073, 557);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 112);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "注文を　確定する";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ConfirmButton.Location = new System.Drawing.Point(936, 557);
+            this.ConfirmButton.Name = "ConfirmButton";
+            this.ConfirmButton.Size = new System.Drawing.Size(180, 112);
+            this.ConfirmButton.TabIndex = 8;
+            this.ConfirmButton.Text = "注文を　確定する";
+            this.ConfirmButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // CallStaffButton
             // 
-            this.button2.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(886, 585);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 84);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "店員を呼ぶ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.CallStaffButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CallStaffButton.Location = new System.Drawing.Point(757, 585);
+            this.CallStaffButton.Name = "CallStaffButton";
+            this.CallStaffButton.Size = new System.Drawing.Size(148, 84);
+            this.CallStaffButton.TabIndex = 14;
+            this.CallStaffButton.Text = "店員を呼ぶ";
+            this.CallStaffButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox9
+            // FoodMenu02
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(100, 98);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(240, 140);
-            this.pictureBox9.TabIndex = 15;
-            this.pictureBox9.TabStop = false;
+            this.FoodMenu02.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu02.Image")));
+            this.FoodMenu02.Location = new System.Drawing.Point(310, 126);
+            this.FoodMenu02.Name = "FoodMenu02";
+            this.FoodMenu02.Size = new System.Drawing.Size(240, 140);
+            this.FoodMenu02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FoodMenu02.TabIndex = 16;
+            this.FoodMenu02.TabStop = false;
             // 
-            // pictureBox10
+            // FoodMenu03
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(366, 98);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(240, 140);
-            this.pictureBox10.TabIndex = 16;
-            this.pictureBox10.TabStop = false;
+            this.FoodMenu03.ErrorImage = null;
+            this.FoodMenu03.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu03.Image")));
+            this.FoodMenu03.InitialImage = null;
+            this.FoodMenu03.Location = new System.Drawing.Point(571, 126);
+            this.FoodMenu03.Name = "FoodMenu03";
+            this.FoodMenu03.Size = new System.Drawing.Size(240, 140);
+            this.FoodMenu03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FoodMenu03.TabIndex = 17;
+            this.FoodMenu03.TabStop = false;
             // 
-            // pictureBox11
+            // FoodMenu04
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(627, 98);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(240, 140);
-            this.pictureBox11.TabIndex = 17;
-            this.pictureBox11.TabStop = false;
+            this.FoodMenu04.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu04.Image")));
+            this.FoodMenu04.Location = new System.Drawing.Point(44, 305);
+            this.FoodMenu04.Name = "FoodMenu04";
+            this.FoodMenu04.Size = new System.Drawing.Size(240, 140);
+            this.FoodMenu04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FoodMenu04.TabIndex = 18;
+            this.FoodMenu04.TabStop = false;
             // 
-            // pictureBox12
+            // FoodMenu05
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(100, 301);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(240, 140);
-            this.pictureBox12.TabIndex = 18;
-            this.pictureBox12.TabStop = false;
+            this.FoodMenu05.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu05.Image")));
+            this.FoodMenu05.Location = new System.Drawing.Point(310, 305);
+            this.FoodMenu05.Name = "FoodMenu05";
+            this.FoodMenu05.Size = new System.Drawing.Size(240, 140);
+            this.FoodMenu05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FoodMenu05.TabIndex = 19;
+            this.FoodMenu05.TabStop = false;
             // 
-            // pictureBox13
+            // TotalYenLabel
             // 
-            this.pictureBox13.Location = new System.Drawing.Point(366, 301);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(240, 140);
-            this.pictureBox13.TabIndex = 19;
-            this.pictureBox13.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(504, 506);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(278, 33);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "合計￥＊＊,＊＊＊";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("UD デジタル 教科書体 NP", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(67, 447);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(431, 123);
-            this.textBox1.TabIndex = 22;
-            this.textBox1.Text = "ハンバーグステーキ";
+            this.TotalYenLabel.AutoSize = true;
+            this.TotalYenLabel.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TotalYenLabel.Location = new System.Drawing.Point(410, 491);
+            this.TotalYenLabel.Name = "TotalYenLabel";
+            this.TotalYenLabel.Size = new System.Drawing.Size(111, 33);
+            this.TotalYenLabel.TabIndex = 21;
+            this.TotalYenLabel.Text = "合計￥";
             // 
             // MenuTab1
             // 
@@ -206,47 +196,52 @@
             this.MenuTab1.Size = new System.Drawing.Size(128, 48);
             this.MenuTab1.TabIndex = 23;
             this.MenuTab1.UseVisualStyleBackColor = true;
+            this.MenuTab1.Click += new System.EventHandler(this.MenuTab1_Click);
             // 
-            // button3
+            // MenuTab2
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.Location = new System.Drawing.Point(163, 32);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 48);
-            this.button3.TabIndex = 24;
-            this.button3.UseVisualStyleBackColor = true;
+            this.MenuTab2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab2.BackgroundImage")));
+            this.MenuTab2.Location = new System.Drawing.Point(163, 32);
+            this.MenuTab2.Name = "MenuTab2";
+            this.MenuTab2.Size = new System.Drawing.Size(128, 48);
+            this.MenuTab2.TabIndex = 24;
+            this.MenuTab2.UseVisualStyleBackColor = true;
+            this.MenuTab2.Click += new System.EventHandler(this.MenuTab2_Click);
             // 
-            // button4
+            // MenuTab3
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.Location = new System.Drawing.Point(283, 32);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 48);
-            this.button4.TabIndex = 25;
-            this.button4.UseVisualStyleBackColor = true;
+            this.MenuTab3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab3.BackgroundImage")));
+            this.MenuTab3.Location = new System.Drawing.Point(283, 32);
+            this.MenuTab3.Name = "MenuTab3";
+            this.MenuTab3.Size = new System.Drawing.Size(128, 48);
+            this.MenuTab3.TabIndex = 25;
+            this.MenuTab3.UseVisualStyleBackColor = true;
+            this.MenuTab3.Click += new System.EventHandler(this.MenuTab3_Click);
             // 
-            // button5
+            // MenuTab4
             // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.Location = new System.Drawing.Point(403, 32);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 48);
-            this.button5.TabIndex = 26;
-            this.button5.UseVisualStyleBackColor = true;
+            this.MenuTab4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab4.BackgroundImage")));
+            this.MenuTab4.Location = new System.Drawing.Point(403, 32);
+            this.MenuTab4.Name = "MenuTab4";
+            this.MenuTab4.Size = new System.Drawing.Size(128, 48);
+            this.MenuTab4.TabIndex = 26;
+            this.MenuTab4.UseVisualStyleBackColor = true;
+            this.MenuTab4.Click += new System.EventHandler(this.MenuTab4_Click);
             // 
-            // button6
+            // MenuTab5
             // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.Location = new System.Drawing.Point(523, 32);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(128, 48);
-            this.button6.TabIndex = 27;
-            this.button6.UseVisualStyleBackColor = true;
+            this.MenuTab5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab5.BackgroundImage")));
+            this.MenuTab5.Location = new System.Drawing.Point(523, 32);
+            this.MenuTab5.Name = "MenuTab5";
+            this.MenuTab5.Size = new System.Drawing.Size(128, 48);
+            this.MenuTab5.TabIndex = 27;
+            this.MenuTab5.UseVisualStyleBackColor = true;
+            this.MenuTab5.Click += new System.EventHandler(this.MenuTab5_Click);
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.numericUpDown1.Location = new System.Drawing.Point(378, 519);
+            this.numericUpDown1.Location = new System.Drawing.Point(319, 487);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(33, 36);
             this.numericUpDown1.TabIndex = 28;
@@ -258,79 +253,189 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Window;
-            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(417, 519);
+            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label4.Location = new System.Drawing.Point(349, 487);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 37);
+            this.label4.Size = new System.Drawing.Size(52, 36);
             this.label4.TabIndex = 29;
             this.label4.Text = "個";
+            // 
+            // Menu01Label
+            // 
+            this.Menu01Label.AutoSize = true;
+            this.Menu01Label.Location = new System.Drawing.Point(44, 263);
+            this.Menu01Label.Name = "Menu01Label";
+            this.Menu01Label.Size = new System.Drawing.Size(35, 12);
+            this.Menu01Label.TabIndex = 30;
+            this.Menu01Label.Text = "label6";
+            // 
+            // Menu02Label
+            // 
+            this.Menu02Label.AutoSize = true;
+            this.Menu02Label.Location = new System.Drawing.Point(310, 263);
+            this.Menu02Label.Name = "Menu02Label";
+            this.Menu02Label.Size = new System.Drawing.Size(35, 12);
+            this.Menu02Label.TabIndex = 31;
+            this.Menu02Label.Text = "label7";
+            // 
+            // Menu03Label
+            // 
+            this.Menu03Label.AutoSize = true;
+            this.Menu03Label.Location = new System.Drawing.Point(571, 263);
+            this.Menu03Label.Name = "Menu03Label";
+            this.Menu03Label.Size = new System.Drawing.Size(35, 12);
+            this.Menu03Label.TabIndex = 32;
+            this.Menu03Label.Text = "label8";
+            // 
+            // Menu04Label
+            // 
+            this.Menu04Label.AutoSize = true;
+            this.Menu04Label.Location = new System.Drawing.Point(44, 444);
+            this.Menu04Label.Name = "Menu04Label";
+            this.Menu04Label.Size = new System.Drawing.Size(35, 12);
+            this.Menu04Label.TabIndex = 33;
+            this.Menu04Label.Text = "label9";
+            // 
+            // Menu05Label
+            // 
+            this.Menu05Label.AutoSize = true;
+            this.Menu05Label.Location = new System.Drawing.Point(310, 444);
+            this.Menu05Label.Name = "Menu05Label";
+            this.Menu05Label.Size = new System.Drawing.Size(41, 12);
+            this.Menu05Label.TabIndex = 34;
+            this.Menu05Label.Text = "label10";
+            // 
+            // MenuName
+            // 
+            this.MenuName.BackColor = System.Drawing.SystemColors.Info;
+            this.MenuName.Enabled = false;
+            this.MenuName.Font = new System.Drawing.Font("UD デジタル 教科書体 NP", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.MenuName.Location = new System.Drawing.Point(53, 487);
+            this.MenuName.Multiline = true;
+            this.MenuName.Name = "MenuName";
+            this.MenuName.Size = new System.Drawing.Size(266, 36);
+            this.MenuName.TabIndex = 35;
+            this.MenuName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // NowOrderButton
+            // 
+            this.NowOrderButton.Font = new System.Drawing.Font("メイリオ", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.NowOrderButton.Location = new System.Drawing.Point(725, 461);
+            this.NowOrderButton.Name = "NowOrderButton";
+            this.NowOrderButton.Size = new System.Drawing.Size(142, 77);
+            this.NowOrderButton.TabIndex = 36;
+            this.NowOrderButton.Text = "注文";
+            this.NowOrderButton.UseVisualStyleBackColor = true;
+            this.NowOrderButton.Visible = false;
+            // 
+            // OrderedListButton
+            // 
+            this.OrderedListButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.OrderedListButton.Location = new System.Drawing.Point(947, 461);
+            this.OrderedListButton.Name = "OrderedListButton";
+            this.OrderedListButton.Size = new System.Drawing.Size(169, 90);
+            this.OrderedListButton.TabIndex = 37;
+            this.OrderedListButton.Text = "注文一覧";
+            this.OrderedListButton.UseVisualStyleBackColor = true;
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.PriceLabel.Location = new System.Drawing.Point(522, 491);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(0, 33);
+            this.PriceLabel.TabIndex = 38;
+            // 
+            // FoodMenu01
+            // 
+            this.FoodMenu01.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu01.Image")));
+            this.FoodMenu01.Location = new System.Drawing.Point(44, 126);
+            this.FoodMenu01.Name = "FoodMenu01";
+            this.FoodMenu01.Size = new System.Drawing.Size(240, 140);
+            this.FoodMenu01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FoodMenu01.TabIndex = 39;
+            this.FoodMenu01.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(1139, 681);
+            this.Controls.Add(this.Menu04Label);
+            this.Controls.Add(this.Menu01Label);
+            this.Controls.Add(this.FoodMenu01);
+            this.Controls.Add(this.PriceLabel);
+            this.Controls.Add(this.OrderedListButton);
+            this.Controls.Add(this.NowOrderButton);
+            this.Controls.Add(this.MenuName);
+            this.Controls.Add(this.Menu05Label);
+            this.Controls.Add(this.Menu03Label);
+            this.Controls.Add(this.Menu02Label);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.MenuTab5);
+            this.Controls.Add(this.MenuTab4);
+            this.Controls.Add(this.MenuTab3);
+            this.Controls.Add(this.MenuTab2);
             this.Controls.Add(this.MenuTab1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.TotalYenLabel);
+            this.Controls.Add(this.FoodMenu05);
+            this.Controls.Add(this.FoodMenu04);
+            this.Controls.Add(this.FoodMenu03);
+            this.Controls.Add(this.FoodMenu02);
+            this.Controls.Add(this.CallStaffButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.OrderList);
+            this.Controls.Add(this.SeatNoLabel);
+            this.Controls.Add(this.ConfirmButton);
+            this.Controls.Add(this.MenuBG);
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.Text = "ファミレスメニューシミュレータ";
+            ((System.ComponentModel.ISupportInitialize)(this.MenuBG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu02)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu03)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu04)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu05)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodMenu01)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.PictureBox MenuBG;
+        private System.Windows.Forms.Label SeatNoLabel;
+        private System.Windows.Forms.ListBox OrderList;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button ConfirmButton;
+        private System.Windows.Forms.Button CallStaffButton;
+        private System.Windows.Forms.PictureBox FoodMenu02;
+        private System.Windows.Forms.PictureBox FoodMenu03;
+        private System.Windows.Forms.PictureBox FoodMenu04;
+        private System.Windows.Forms.PictureBox FoodMenu05;
+        private System.Windows.Forms.Label TotalYenLabel;
         private System.Windows.Forms.Button MenuTab1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button MenuTab2;
+        private System.Windows.Forms.Button MenuTab3;
+        private System.Windows.Forms.Button MenuTab4;
+        private System.Windows.Forms.Button MenuTab5;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Menu01Label;
+        private System.Windows.Forms.Label Menu02Label;
+        private System.Windows.Forms.Label Menu03Label;
+        private System.Windows.Forms.Label Menu04Label;
+        private System.Windows.Forms.Label Menu05Label;
+        private System.Windows.Forms.TextBox MenuName;
+        private System.Windows.Forms.Button NowOrderButton;
+        private System.Windows.Forms.Button OrderedListButton;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.PictureBox FoodMenu01;
     }
 }
 
