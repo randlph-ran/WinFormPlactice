@@ -1,0 +1,58 @@
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+}
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+public class DataManager
+{
+    // 全体からアクセス可能なリスト
+    public static List<User> UserList { get; set; } = new List<User>();
+
+    public static void LoadCsv(string filePath)
+    {
+        try
+        {
+            // 全ての行を読み込む（1行目はヘッダーと想定して飛ばす）
+            var lines = File.ReadAllLines(filePath).Skip(1);
+
+            foreach (var line in lines)
+            {
+                var values = line.Split(','); // カンマで分割
+
+                var user = new User
+                {
+                    Id = int.Parse(values[0]),
+                    Name = values[1],
+                    Email = values[2]
+                };
+
+                UserList.Add(user);
+            }
+            Console.WriteLine("読み込み完了！");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"エラーが発生しました: {ex.Message}");
+        }
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        // 読み込み実行
+        DataManager.LoadCsv("data.csv");
+
+        // どこからでもリストを使える
+        foreach (var user in DataManager.UserList)
+        {
+            Console.WriteLine($"{user.Id}: {user.Name}");
+        }
+    }
+}
