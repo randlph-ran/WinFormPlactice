@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.MenuBG = new System.Windows.Forms.PictureBox();
             this.SeatNoLabel = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.OrderedListButton = new System.Windows.Forms.Button();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.FoodMenu01 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MenuBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu03)).BeginInit();
@@ -248,6 +250,12 @@
             this.numericUpDown1.TabStop = false;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown1.UseWaitCursor = true;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
             // label4
             // 
@@ -263,45 +271,50 @@
             // Menu01Label
             // 
             this.Menu01Label.AutoSize = true;
+            this.Menu01Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu01Label.Location = new System.Drawing.Point(44, 263);
             this.Menu01Label.Name = "Menu01Label";
-            this.Menu01Label.Size = new System.Drawing.Size(35, 12);
+            this.Menu01Label.Size = new System.Drawing.Size(142, 21);
             this.Menu01Label.TabIndex = 30;
-            this.Menu01Label.Text = "label6";
+            this.Menu01Label.Text = "＊＊＊＊＊＊";
             // 
             // Menu02Label
             // 
             this.Menu02Label.AutoSize = true;
+            this.Menu02Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu02Label.Location = new System.Drawing.Point(310, 263);
             this.Menu02Label.Name = "Menu02Label";
-            this.Menu02Label.Size = new System.Drawing.Size(35, 12);
+            this.Menu02Label.Size = new System.Drawing.Size(76, 21);
             this.Menu02Label.TabIndex = 31;
             this.Menu02Label.Text = "label7";
             // 
             // Menu03Label
             // 
             this.Menu03Label.AutoSize = true;
+            this.Menu03Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu03Label.Location = new System.Drawing.Point(571, 263);
             this.Menu03Label.Name = "Menu03Label";
-            this.Menu03Label.Size = new System.Drawing.Size(35, 12);
+            this.Menu03Label.Size = new System.Drawing.Size(76, 21);
             this.Menu03Label.TabIndex = 32;
             this.Menu03Label.Text = "label8";
             // 
             // Menu04Label
             // 
             this.Menu04Label.AutoSize = true;
+            this.Menu04Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu04Label.Location = new System.Drawing.Point(44, 444);
             this.Menu04Label.Name = "Menu04Label";
-            this.Menu04Label.Size = new System.Drawing.Size(35, 12);
+            this.Menu04Label.Size = new System.Drawing.Size(76, 21);
             this.Menu04Label.TabIndex = 33;
             this.Menu04Label.Text = "label9";
             // 
             // Menu05Label
             // 
             this.Menu05Label.AutoSize = true;
+            this.Menu05Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu05Label.Location = new System.Drawing.Point(310, 444);
             this.Menu05Label.Name = "Menu05Label";
-            this.Menu05Label.Size = new System.Drawing.Size(41, 12);
+            this.Menu05Label.Size = new System.Drawing.Size(87, 21);
             this.Menu05Label.TabIndex = 34;
             this.Menu05Label.Text = "label10";
             // 
@@ -356,13 +369,18 @@
             this.FoodMenu01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu01.TabIndex = 39;
             this.FoodMenu01.TabStop = false;
+            this.FoodMenu01.Click += new System.EventHandler(this.Menu01Clicked);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1139, 681);
+            this.ClientSize = new System.Drawing.Size(1139, 676);
             this.Controls.Add(this.Menu04Label);
             this.Controls.Add(this.Menu01Label);
             this.Controls.Add(this.FoodMenu01);
@@ -418,24 +436,25 @@
         private System.Windows.Forms.PictureBox FoodMenu03;
         private System.Windows.Forms.PictureBox FoodMenu04;
         private System.Windows.Forms.PictureBox FoodMenu05;
-        private System.Windows.Forms.Label TotalYenLabel;
         private System.Windows.Forms.Button MenuTab1;
         private System.Windows.Forms.Button MenuTab2;
         private System.Windows.Forms.Button MenuTab3;
         private System.Windows.Forms.Button MenuTab4;
         private System.Windows.Forms.Button MenuTab5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label Menu01Label;
-        private System.Windows.Forms.Label Menu02Label;
-        private System.Windows.Forms.Label Menu03Label;
-        private System.Windows.Forms.Label Menu04Label;
-        private System.Windows.Forms.Label Menu05Label;
-        private System.Windows.Forms.TextBox MenuName;
         private System.Windows.Forms.Button NowOrderButton;
         private System.Windows.Forms.Button OrderedListButton;
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.PictureBox FoodMenu01;
+        private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Label TotalYenLabel;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
+        public System.Windows.Forms.Label Menu01Label;
+        public System.Windows.Forms.Label Menu02Label;
+        public System.Windows.Forms.Label Menu03Label;
+        public System.Windows.Forms.Label Menu04Label;
+        public System.Windows.Forms.Label Menu05Label;
+        public System.Windows.Forms.TextBox MenuName;
     }
 }
 
