@@ -33,8 +33,7 @@
             this.MenuBG = new System.Windows.Forms.PictureBox();
             this.SeatNoLabel = new System.Windows.Forms.Label();
             this.OrderList = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.MyOrder = new System.Windows.Forms.Label();
             this.ConfirmButton = new System.Windows.Forms.Button();
             this.CallStaffButton = new System.Windows.Forms.Button();
             this.FoodMenu02 = new System.Windows.Forms.PictureBox();
@@ -48,7 +47,7 @@
             this.MenuTab4 = new System.Windows.Forms.Button();
             this.MenuTab5 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
+            this.NumLabel = new System.Windows.Forms.Label();
             this.Menu01Label = new System.Windows.Forms.Label();
             this.Menu02Label = new System.Windows.Forms.Label();
             this.Menu03Label = new System.Windows.Forms.Label();
@@ -99,24 +98,16 @@
             this.OrderList.Size = new System.Drawing.Size(223, 340);
             this.OrderList.TabIndex = 11;
             // 
-            // label2
+            // MyOrder
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1071, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 12);
-            this.label2.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(943, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 21);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "注文カゴの中身";
+            this.MyOrder.AutoSize = true;
+            this.MyOrder.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.MyOrder.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.MyOrder.Location = new System.Drawing.Point(943, 83);
+            this.MyOrder.Name = "MyOrder";
+            this.MyOrder.Size = new System.Drawing.Size(149, 21);
+            this.MyOrder.TabIndex = 13;
+            this.MyOrder.Text = "注文カゴの中身";
             // 
             // ConfirmButton
             // 
@@ -257,16 +248,16 @@
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
-            // label4
+            // NumLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Window;
-            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(349, 487);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 36);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "個";
+            this.NumLabel.AutoSize = true;
+            this.NumLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.NumLabel.Font = new System.Drawing.Font("MS UI Gothic", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.NumLabel.Location = new System.Drawing.Point(349, 487);
+            this.NumLabel.Name = "NumLabel";
+            this.NumLabel.Size = new System.Drawing.Size(52, 36);
+            this.NumLabel.TabIndex = 29;
+            this.NumLabel.Text = "個";
             // 
             // Menu01Label
             // 
@@ -274,9 +265,9 @@
             this.Menu01Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu01Label.Location = new System.Drawing.Point(44, 263);
             this.Menu01Label.Name = "Menu01Label";
-            this.Menu01Label.Size = new System.Drawing.Size(142, 21);
+            this.Menu01Label.Size = new System.Drawing.Size(186, 21);
             this.Menu01Label.TabIndex = 30;
-            this.Menu01Label.Text = "＊＊＊＊＊＊";
+            this.Menu01Label.Text = "　　　　　　　　";
             // 
             // Menu02Label
             // 
@@ -284,9 +275,9 @@
             this.Menu02Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu02Label.Location = new System.Drawing.Point(310, 263);
             this.Menu02Label.Name = "Menu02Label";
-            this.Menu02Label.Size = new System.Drawing.Size(76, 21);
+            this.Menu02Label.Size = new System.Drawing.Size(186, 21);
             this.Menu02Label.TabIndex = 31;
-            this.Menu02Label.Text = "label7";
+            this.Menu02Label.Text = "　　　　　　　　";
             // 
             // Menu03Label
             // 
@@ -294,9 +285,9 @@
             this.Menu03Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu03Label.Location = new System.Drawing.Point(571, 263);
             this.Menu03Label.Name = "Menu03Label";
-            this.Menu03Label.Size = new System.Drawing.Size(76, 21);
+            this.Menu03Label.Size = new System.Drawing.Size(186, 21);
             this.Menu03Label.TabIndex = 32;
-            this.Menu03Label.Text = "label8";
+            this.Menu03Label.Text = "　　　　　　　　";
             // 
             // Menu04Label
             // 
@@ -304,9 +295,9 @@
             this.Menu04Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu04Label.Location = new System.Drawing.Point(44, 444);
             this.Menu04Label.Name = "Menu04Label";
-            this.Menu04Label.Size = new System.Drawing.Size(76, 21);
+            this.Menu04Label.Size = new System.Drawing.Size(186, 21);
             this.Menu04Label.TabIndex = 33;
-            this.Menu04Label.Text = "label9";
+            this.Menu04Label.Text = "　　　　　　　　";
             // 
             // Menu05Label
             // 
@@ -314,9 +305,9 @@
             this.Menu05Label.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Menu05Label.Location = new System.Drawing.Point(310, 444);
             this.Menu05Label.Name = "Menu05Label";
-            this.Menu05Label.Size = new System.Drawing.Size(87, 21);
+            this.Menu05Label.Size = new System.Drawing.Size(186, 21);
             this.Menu05Label.TabIndex = 34;
-            this.Menu05Label.Text = "label10";
+            this.Menu05Label.Text = "　　　　　　　　";
             // 
             // MenuName
             // 
@@ -391,7 +382,7 @@
             this.Controls.Add(this.Menu05Label);
             this.Controls.Add(this.Menu03Label);
             this.Controls.Add(this.Menu02Label);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.NumLabel);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.MenuTab5);
             this.Controls.Add(this.MenuTab4);
@@ -404,8 +395,7 @@
             this.Controls.Add(this.FoodMenu03);
             this.Controls.Add(this.FoodMenu02);
             this.Controls.Add(this.CallStaffButton);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.MyOrder);
             this.Controls.Add(this.OrderList);
             this.Controls.Add(this.SeatNoLabel);
             this.Controls.Add(this.ConfirmButton);
@@ -428,8 +418,7 @@
         private System.Windows.Forms.PictureBox MenuBG;
         private System.Windows.Forms.Label SeatNoLabel;
         private System.Windows.Forms.ListBox OrderList;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label MyOrder;
         private System.Windows.Forms.Button ConfirmButton;
         private System.Windows.Forms.Button CallStaffButton;
         private System.Windows.Forms.PictureBox FoodMenu02;
@@ -441,7 +430,7 @@
         private System.Windows.Forms.Button MenuTab3;
         private System.Windows.Forms.Button MenuTab4;
         private System.Windows.Forms.Button MenuTab5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label NumLabel;
         private System.Windows.Forms.Button NowOrderButton;
         private System.Windows.Forms.Button OrderedListButton;
         private System.Windows.Forms.Label PriceLabel;
