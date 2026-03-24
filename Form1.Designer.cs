@@ -128,11 +128,11 @@
             // 
             // CallStaffButton
             // 
-            this.CallStaffButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CallStaffButton.Location = new System.Drawing.Point(1009, 731);
+            this.CallStaffButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CallStaffButton.Location = new System.Drawing.Point(1009, 745);
             this.CallStaffButton.Margin = new System.Windows.Forms.Padding(4);
             this.CallStaffButton.Name = "CallStaffButton";
-            this.CallStaffButton.Size = new System.Drawing.Size(197, 105);
+            this.CallStaffButton.Size = new System.Drawing.Size(173, 91);
             this.CallStaffButton.TabIndex = 14;
             this.CallStaffButton.Text = "店員を呼ぶ";
             this.CallStaffButton.UseVisualStyleBackColor = true;
