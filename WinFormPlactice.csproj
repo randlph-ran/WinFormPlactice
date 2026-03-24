@@ -106,6 +106,8 @@
     <Content Include="chiken_s.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="coffee.png" />
+    <Content Include="cola.png" />
     <Content Include="hamburg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -114,10 +116,13 @@
     </Content>
     <Content Include="karaage.png" />
     <Content Include="karaage_s.png" />
+    <Content Include="lemontea.png" />
     <Content Include="minipizza.png" />
     <Content Include="minipizza_s.png" />
     <Content Include="onion.png" />
     <Content Include="onion_s.png" />
+    <Content Include="oolongtea.png" />
+    <Content Include="orangejuice.png" />
     <Content Include="pasta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -128,13 +133,15 @@
     <Content Include="potat_s.png" />
     <Content Include="サイドメニュータブ.png" />
     <Content Include="デザートメニュータブ.png" />
-    <Content Include="デザート向けピンク系背景.png" />
+    <Content Include="デザート向けピンク系背景.jpg" />
     <Content Include="ドリンクメニュータブ.png" />
-    <Content Include="ドリンク向けオレンジ系背景.png" />
+    <Content Include="ドリンク向けオレンジ系背景.jpg" />
+    <Content Include="和食.jpg" />
     <Content Include="和食.png" />
     <Content Include="和食タブ.png" />
     <Content Include="洋食タブ.png" />
-    <Content Include="白ベースのサイドメニュー向け背景.png" />
+    <Content Include="白ベースのサイドメニュー向け背景.jpg" />
+    <Content Include="肉料理.jpg" />
     <Content Include="肉料理.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

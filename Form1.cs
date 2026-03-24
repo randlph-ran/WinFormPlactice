@@ -50,7 +50,7 @@ namespace WinFormPlactice
             MenuName.Text = "";
             switch (menuStatus)
             {
-                case (0):
+                case (0): //起動直後はMenuTab1が選択されている状態なので、MenuTab1の内容を表示する
                     Menu01Label.Text = menuPrices[0].Name; //デザインで作成したMenu01Labelにファイルから読み込んだ名前を追加
                     Menu02Label.Text = menuPrices[1].Name;
                     Menu03Label.Text = menuPrices[2].Name;
@@ -72,7 +72,7 @@ namespace WinFormPlactice
                     FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[4].Thombnail);
                     FoodMenu05.ResumeLayout();
                     break;
-                case (1):
+                case (1): //MenuTab1が選択されている状態なので、MenuTab1の内容を表示する
                     Menu01Label.Text = menuPrices[0].Name; //デザインで作成したMenu01Labelにファイルから読み込んだ名前を追加
                     Menu02Label.Text = menuPrices[1].Name;
                     Menu03Label.Text = menuPrices[2].Name;
@@ -94,7 +94,7 @@ namespace WinFormPlactice
                     FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[4].Thombnail);
                     FoodMenu05.ResumeLayout();
                     break;
-                case (2):
+                case (2): //MenuTab2が選択されている状態なので、MenuTab2の内容を表示する
                     Menu01Label.Text = menuPrices[5].Name;
                     Menu02Label.Text = menuPrices[6].Name;
                     Menu03Label.Text = menuPrices[7].Name;
@@ -116,7 +116,7 @@ namespace WinFormPlactice
                     FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[9].Thombnail);
                     FoodMenu05.ResumeLayout();
                     break;
-                case (3):
+                case (3): //MenuTab3が選択されている状態なので、MenuTab3の内容を表示する
                     Menu01Label.Text = menuPrices[10].Name;
                     Menu02Label.Text = menuPrices[11].Name;
                     Menu03Label.Text = menuPrices[12].Name;
@@ -138,6 +138,51 @@ namespace WinFormPlactice
                     FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[14].Thombnail);
                     FoodMenu05.ResumeLayout();
                     break;
+                case (4): //MenuTab4が選択されている状態なので、MenuTab4の内容を表示する
+                    Menu01Label.Text = menuPrices[15].Name;
+                    Menu02Label.Text = menuPrices[16].Name;
+                    Menu03Label.Text = menuPrices[17].Name;
+                    Menu04Label.Text = menuPrices[18].Name;
+                    Menu05Label.Text = menuPrices[19].Name;
+                    FoodMenu01.SuspendLayout();
+                    FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[15].Thombnail);
+                    FoodMenu01.ResumeLayout();
+                    FoodMenu02.SuspendLayout();
+                    FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[16].Thombnail);
+                    FoodMenu02.ResumeLayout();
+                    FoodMenu03.SuspendLayout();
+                    FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[17].Thombnail);
+                    FoodMenu03.ResumeLayout();
+                    FoodMenu04.SuspendLayout();
+                    FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[18].Thombnail);
+                    FoodMenu04.ResumeLayout();
+                    FoodMenu05.SuspendLayout();
+                    FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[19].Thombnail);
+                    FoodMenu05.ResumeLayout();
+                    break;
+                case (5): //MenuTab5が選択されている状態なので、MenuTab4の内容を表示する
+                    Menu01Label.Text = menuPrices[20].Name;
+                    Menu02Label.Text = menuPrices[21].Name;
+                    Menu03Label.Text = menuPrices[22].Name;
+                    Menu04Label.Text = menuPrices[23].Name;
+                    Menu05Label.Text = menuPrices[24].Name;
+                    FoodMenu01.SuspendLayout();
+                    FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[15].Thombnail);
+                    FoodMenu01.ResumeLayout();
+                    FoodMenu02.SuspendLayout();
+                    FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[16].Thombnail);
+                    FoodMenu02.ResumeLayout();
+                    FoodMenu03.SuspendLayout();
+                    FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[17].Thombnail);
+                    FoodMenu03.ResumeLayout();
+                    FoodMenu04.SuspendLayout();
+                    FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[18].Thombnail);
+                    FoodMenu04.ResumeLayout();
+                    FoodMenu05.SuspendLayout();
+                    FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[19].Thombnail);
+                    FoodMenu05.ResumeLayout();
+                    break;
+
             }
         }
         private void MenuTab1_Click(object sender, System.EventArgs e)
@@ -145,6 +190,8 @@ namespace WinFormPlactice
             menuStatus = 1;
             numericUpDown1.Value = 1;
             TotalYenLabel.Text = "0";
+            MenuBG.ImageLocation = @"..\..\img\肉料理.jpg"; //MenuBGの画像を変更
+
             Menu1Reflesh();
         }
 
@@ -153,6 +200,7 @@ namespace WinFormPlactice
             menuStatus = 2;
             numericUpDown1.Value = 1;
             TotalYenLabel.Text = "0";
+            MenuBG.ImageLocation = @"..\..\img\和食.jpg"; //MenuBGの画像を変更
             Menu1Reflesh();
         }
 
@@ -161,6 +209,7 @@ namespace WinFormPlactice
             menuStatus = 3;
             numericUpDown1.Value = 1;
             TotalYenLabel.Text = "0";
+            MenuBG.ImageLocation = @"..\..\img\白ベースのサイドメニュー向け背景.jpg"; //MenuBGの画像を変更
             Menu1Reflesh();
         }
 
@@ -169,6 +218,7 @@ namespace WinFormPlactice
             menuStatus = 4;
             numericUpDown1.Value = 1;
             TotalYenLabel.Text = "0";
+            MenuBG.ImageLocation = @"..\..\img\デザート向けピンク系背景.jpg"; //MenuBGの画像を変更
             Menu1Reflesh();
         }
 
@@ -177,119 +227,194 @@ namespace WinFormPlactice
             menuStatus = 5;
             numericUpDown1.Value = 1;
             TotalYenLabel.Text = "0";
+            MenuBG.ImageLocation = @"..\..\img\ドリンク向けオレンジ系背景.jpg"; //MenuBGの画像を変更
             Menu1Reflesh();
         }
 
         private void Menu01Clicked(object sender, System.EventArgs e)
         {
             ReadFromFile();
-            if (menuStatus == 1 || menuStatus == 0)
+            switch (menuStatus)
             {
-                var firstItem = menuPrices[0];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if (menuStatus == 2)
-            {
-                var firstItem = menuPrices[5];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if (menuStatus == 3)
-            {
-                var firstItem = menuPrices[10];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                case (0):
+                    var firstItem = menuPrices[0];
+                    MenuName.Text = firstItem.Name;
+                    TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                    break;
+                case (1):
+                    var firstItem1 = menuPrices[0];
+                    MenuName.Text = firstItem1.Name;
+                    TotalYenLabel.Text = (@"" + firstItem1.Price * numericUpDown1.Value);
+                    break;
+                case (2):
+                    var firstItem2 = menuPrices[5];
+                    MenuName.Text = firstItem2.Name;
+                    TotalYenLabel.Text = (@"" + firstItem2.Price * numericUpDown1.Value);
+                    break;
+                case (3):
+                    var firstItem3 = menuPrices[10];
+                    MenuName.Text = firstItem3.Name;
+                    TotalYenLabel.Text = (@"" + firstItem3.Price * numericUpDown1.Value);
+                    break;
+                case (4):
+                    var firstItem4 = menuPrices[15];
+                    MenuName.Text = firstItem4.Name;
+                    TotalYenLabel.Text = (@"" + firstItem4.Price * numericUpDown1.Value);
+                    break;
+                case (5):
+                    var firstItem5 = menuPrices[20];
+                    MenuName.Text = firstItem5.Name;
+                    TotalYenLabel.Text = (@"" + firstItem5.Price * numericUpDown1.Value);
+                    break;
             }
         }
         private void FoodMenu02_Click(object sender, EventArgs e)
         {
             ReadFromFile();
-            if (menuStatus == 1 || menuStatus == 0)
+            switch (menuStatus)
             {
-                var firstItem = menuPrices[1];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if(menuStatus == 2)
-            {
-                var firstItem = menuPrices[6];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if(menuStatus == 3)
-            {
-                var firstItem = menuPrices[11];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
+                case (0):
+                    var firstItem = menuPrices[1];
+                    MenuName.Text = firstItem.Name;
+                    TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                    break;
+                case (1):
+                    var firstItem1 = menuPrices[1];
+                    MenuName.Text = firstItem1.Name;
+                    TotalYenLabel.Text = (@"" + firstItem1.Price * numericUpDown1.Value);
+                    break;
+                case (2):
+                    var firstItem2 = menuPrices[6];
+                    MenuName.Text = firstItem2.Name;
+                    TotalYenLabel.Text = (@"" + firstItem2.Price * numericUpDown1.Value);
+                    break;
+                case (3):
+                    var firstItem3 = menuPrices[11];
+                    MenuName.Text = firstItem3.Name;
+                    TotalYenLabel.Text = (@"" + firstItem3.Price * numericUpDown1.Value);
+                    break;
+                case (4):
+                    var firstItem4 = menuPrices[16];
+                    MenuName.Text = firstItem4.Name;
+                    TotalYenLabel.Text = (@"" + firstItem4.Price * numericUpDown1.Value);
+                    break;
+                case (5):
+                    var firstItem5 = menuPrices[21];
+                    MenuName.Text = firstItem5.Name;
+                    TotalYenLabel.Text = (@"" + firstItem5.Price * numericUpDown1.Value);
+                    break;
 
+            }
         }
         private void FoodMenu03_Click(object sender, EventArgs e)
         {
             ReadFromFile();
-            if (menuStatus == 1 || menuStatus == 0)
+            switch (menuStatus)
             {
-                var firstItem = menuPrices[2];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-
-            }
-            else if (menuStatus == 2)
-            {
-                var firstItem = menuPrices[7];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if (menuStatus == 3)
-            {
-                var firstItem = menuPrices[12];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                case (0):
+                    var firstItem = menuPrices[2];
+                    MenuName.Text = firstItem.Name;
+                    TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                    break;
+                case (1):
+                    var firstItem1 = menuPrices[2];
+                    MenuName.Text = firstItem1.Name;
+                    TotalYenLabel.Text = (@"" + firstItem1.Price * numericUpDown1.Value);
+                    break;
+                case (2):
+                    var firstItem2 = menuPrices[7];
+                    MenuName.Text = firstItem2.Name;
+                    TotalYenLabel.Text = (@"" + firstItem2.Price * numericUpDown1.Value);
+                    break;
+                case (3):
+                    var firstItem3 = menuPrices[12];
+                    MenuName.Text = firstItem3.Name;
+                    TotalYenLabel.Text = (@"" + firstItem3.Price * numericUpDown1.Value);
+                    break;
+                case (4):
+                    var firstItem4 = menuPrices[17];
+                    MenuName.Text = firstItem4.Name;
+                    TotalYenLabel.Text = (@"" + firstItem4.Price * numericUpDown1.Value);
+                    break;
+                case (5):
+                    var firstItem5 = menuPrices[22];
+                    MenuName.Text = firstItem5.Name;
+                    TotalYenLabel.Text = (@"" + firstItem5.Price * numericUpDown1.Value);
+                    break;
             }
         }
         private void FoodMenu04_Click(object sender, EventArgs e)
         {
             ReadFromFile();
-            if (menuStatus == 1 || menuStatus == 0)
+            switch (menuStatus)
             {
-                var firstItem = menuPrices[3];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if (menuStatus == 2)
-            {
-                var firstItem = menuPrices[8];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if (menuStatus == 3)
-            {
-                var firstItem = menuPrices[13];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                case (0):
+                    var firstItem = menuPrices[3];
+                    MenuName.Text = firstItem.Name;
+                    TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                    break;
+                case (1):
+                    var firstItem1 = menuPrices[4];
+                    MenuName.Text = firstItem1.Name;
+                    TotalYenLabel.Text = (@"" + firstItem1.Price * numericUpDown1.Value);
+                    break;
+                case (2):
+                    var firstItem2 = menuPrices[8];
+                    MenuName.Text = firstItem2.Name;
+                    TotalYenLabel.Text = (@"" + firstItem2.Price * numericUpDown1.Value);
+                    break;
+                case (3):
+                    var firstItem3 = menuPrices[13];
+                    MenuName.Text = firstItem3.Name;
+                    TotalYenLabel.Text = (@"" + firstItem3.Price * numericUpDown1.Value);
+                    break;
+                case (4):
+                    var firstItem4 = menuPrices[18];
+                    MenuName.Text = firstItem4.Name;
+                    TotalYenLabel.Text = (@"" + firstItem4.Price * numericUpDown1.Value);
+                    break;
+                case (5):
+                    var firstItem5 = menuPrices[23];
+                    MenuName.Text = firstItem5.Name;
+                    TotalYenLabel.Text = (@"" + firstItem5.Price * numericUpDown1.Value);
+                    break;
             }
         }
         private void FoodMenu05_Click(object sender, EventArgs e)
         {
             ReadFromFile();
-            if (menuStatus == 1 || menuStatus == 0)
+            switch (menuStatus)
             {
-                var firstItem = menuPrices[4];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if (menuStatus == 2)
-            {
-                var firstItem = menuPrices[9];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-            }
-            else if (menuStatus == 3)
-            {
-                var firstItem = menuPrices[14];
-                MenuName.Text = firstItem.Name;
-                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                case (0):
+                    var firstItem = menuPrices[4];
+                    MenuName.Text = firstItem.Name;
+                    TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+                    break;
+                case (1):
+                    var firstItem1 = menuPrices[4];
+                    MenuName.Text = firstItem1.Name;
+                    TotalYenLabel.Text = (@"" + firstItem1.Price * numericUpDown1.Value);
+                    break;
+                case (2):
+                    var firstItem2 = menuPrices[9];
+                    MenuName.Text = firstItem2.Name;
+                    TotalYenLabel.Text = (@"" + firstItem2.Price * numericUpDown1.Value);
+                    break;
+                case (3):
+                    var firstItem3 = menuPrices[14];
+                    MenuName.Text = firstItem3.Name;
+                    TotalYenLabel.Text = (@"" + firstItem3.Price * numericUpDown1.Value);
+                    break;
+                case (4):
+                    var firstItem4 = menuPrices[19];
+                    MenuName.Text = firstItem4.Name;
+                    TotalYenLabel.Text = (@"" + firstItem4.Price * numericUpDown1.Value);
+                    break;
+                case (5):
+                    var firstItem5 = menuPrices[24];
+                    MenuName.Text = firstItem5.Name;
+                    TotalYenLabel.Text = (@"" + firstItem5.Price * numericUpDown1.Value);
+                    break;
             }
         }
 
