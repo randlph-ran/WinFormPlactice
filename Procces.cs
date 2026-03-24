@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Linq;
 
 namespace WinFormPlactice
 {
@@ -14,48 +15,43 @@ namespace WinFormPlactice
             public string Img { get; set; }
             public string Thombnail { get; set; }
         }
-        public static List<MenuPrice> LoadMenuCsv(string filePath)
+        public class DataManager
         {
-            // CSV の全行を格納する List
-            var list = new List<Procces.MenuPrice>();
-
-            // CSV の全行を UTF-8 で読み込む
-            var lines = File.ReadAllLines(filePath, Encoding.UTF8);
-
-            // ---------------------------------------------------------
-            // ① 行数チェック（1行もない場合は空のリストを返す）
-            // ---------------------------------------------------------
-            if (lines.Length <= 1)
-                return list;
-
-            // ---------------------------------------------------------
-            // ② i = 1 から開始することで「2行目以降」を読み込む
-            // ---------------------------------------------------------
-            for (int i = 0; i < lines.Length; i++)
+            // 全体からアクセス可能なリスト
+            public static List<MenuPrice> LoadCsv(string filePath)
             {
-                var line = lines[i];
+                var menuList = new List<MenuPrice>();
 
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                var cols = line.Split(',');
-
-                if (cols.Length < 5)
-                    continue;
-
-                var data = new Procces.MenuPrice
+                try
                 {
-                    mID = int.Parse(cols[0]),
-                    Name = cols[1],
-                    Price = int.Parse(cols[2]),
-                    Img = cols[3],
-                    Thombnail = cols[4]
-                };
+                    // 全ての行を読み込む（1行目はヘッダーと想定して飛ばす）
+                    var lines = File.ReadAllLines(filePath).Skip(1);
 
-                list.Add(data);
+                    foreach (var line in lines)
+                    {
+                        var values = line.Split(','); // カンマで分割
+
+                        var user = new MenuPrice
+                        {
+                            mID = int.Parse(values[0]),
+                            Name = values[1],
+                            Price = int.Parse(values[2]),
+                            Img = values[3],
+                            Thombnail = values[4]
+                        };
+
+                        menuList.Add(user);
+                    }
+                    Console.WriteLine("読み込み完了！");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"エラーが発生しました: {ex.Message}");
+                    // 例外発生時も空のリストを返す（必要ならここで再スローや null を返す設計に変更）
+                }
+
+                return menuList;
             }
-
-            return list;
         }
     }
 }

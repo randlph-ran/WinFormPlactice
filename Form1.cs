@@ -11,27 +11,23 @@ namespace WinFormPlactice
 
         static int menuStatus = 0;
 
+
         public Form1()
         {
             InitializeComponent();
             menuPrices = new List<Procces.MenuPrice>();
 
-            var menuList = LoadMenuCsv(@"..\..\ShopData.csv");
+            List<MenuPrice> menuList = DataManager.LoadCsv(@"..\..\ShopData.csv");
 
-            foreach (Procces.MenuPrice m in menuList)
-            {
-                Menu01Label.Text = m.Name; //デザインで作成したMenu01Labelにファイルから読み込んだ名前を追加
-                MenuName.Text = m.Name;
-                numericUpDown1.Value = 1;
-                TotalYenLabel.Text = (@"合計￥" + m.Price * numericUpDown1.Value);
-            }
+            int rowCount = menuPrices.Count;
+            int columnCount = typeof(Procces.MenuPrice).GetProperties().Length;
+            ReadFromFile();
+            Menu1Reflesh();
         }
-
-
         private void ReadFromFile()
         {
             using (System.IO.StreamReader file =
-                   new System.IO.StreamReader(@"..\..\ShopData.csv"))
+                    new System.IO.StreamReader(@"..\..\ShopData.csv"))
             {
                 while (!file.EndOfStream) //ファイルの終端まで
                 {
@@ -44,10 +40,19 @@ namespace WinFormPlactice
                     mPrice.Thombnail = data[3];
                     mPrice.Img = data[4];
                     menuPrices.Add(mPrice);
-
                 }
-
             }
+        }
+
+        private void Menu1Reflesh()
+        {
+            Menu01Label.Text = menuPrices[0].Name; //デザインで作成したMenu01Labelにファイルから読み込んだ名前を追加
+            Menu02Label.Text = menuPrices[1].Name;
+            Menu03Label.Text = menuPrices[2].Name;
+            Menu04Label.Text = menuPrices[3].Name;
+            Menu05Label.Text = menuPrices[4].Name;
+            numericUpDown1.Value = 1;
+
         }
 
 
@@ -55,51 +60,43 @@ namespace WinFormPlactice
         {
             menuStatus = 1;
 
+            Menu1Reflesh();
         }
 
         private void MenuTab2_Click(object sender, System.EventArgs e)
         {
             menuStatus = 2;
+            Menu1Reflesh();
         }
 
         private void MenuTab3_Click(object sender, System.EventArgs e)
         {
             menuStatus = 3;
+            Menu1Reflesh();
         }
 
         private void MenuTab4_Click(object sender, System.EventArgs e)
         {
             menuStatus = 4;
+            Menu1Reflesh();
         }
 
         private void MenuTab5_Click(object sender, System.EventArgs e)
         {
             menuStatus = 5;
+            Menu1Reflesh();
         }
 
         private void Menu01Clicked(object sender, System.EventArgs e)
         {
-            var menuList = LoadMenuCsv(@"..\..\ShopData.csv");
-
-            foreach (Procces.MenuPrice m in menuList)
-            {
-                Menu01Label.Text = m.Name; //デザインで作成したMenu01Labelにファイルから読み込んだ名前を追加
-                MenuName.Text = m.Name;
-                numericUpDown1.Value = 1;
-                TotalYenLabel.Text = (@"合計￥" + m.Price * numericUpDown1.Value);
-            }
+            ReadFromFile();
         }
         private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
         {
-            var menuList = LoadMenuCsv(@"..\..\ShopData.csv");
-
-            foreach (Procces.MenuPrice m in menuList)
-            {
-                Menu01Label.Text = m.Name; //デザインで作成したMenu01Labelにファイルから読み込んだ名前を追加
-                MenuName.Text = m.Name;
-                numericUpDown1.Value = 1;
-                TotalYenLabel.Text = (@"合計￥" + m.Price * numericUpDown1.Value);
-            }
+            ReadFromFile();
+            var firstItem = menuPrices[0];
+            int price = firstItem.Price;     // 価格
+            TotalYenLabel.Text = (@"合計￥" + firstItem.Price * numericUpDown1.Value);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
