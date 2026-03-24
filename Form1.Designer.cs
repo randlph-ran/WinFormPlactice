@@ -59,6 +59,8 @@
             this.PriceLabel = new System.Windows.Forms.Label();
             this.FoodMenu01 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.TotalOrderPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MenuBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu03)).BeginInit();
@@ -94,7 +96,7 @@
             // 
             this.OrderList.FormattingEnabled = true;
             this.OrderList.ItemHeight = 15;
-            this.OrderList.Location = new System.Drawing.Point(1215, 134);
+            this.OrderList.Location = new System.Drawing.Point(1214, 40);
             this.OrderList.Margin = new System.Windows.Forms.Padding(4);
             this.OrderList.Name = "OrderList";
             this.OrderList.ScrollAlwaysVisible = true;
@@ -106,7 +108,7 @@
             this.MyOrder.AutoSize = true;
             this.MyOrder.BackColor = System.Drawing.SystemColors.HighlightText;
             this.MyOrder.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.MyOrder.Location = new System.Drawing.Point(1257, 104);
+            this.MyOrder.Location = new System.Drawing.Point(1256, 10);
             this.MyOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MyOrder.Name = "MyOrder";
             this.MyOrder.Size = new System.Drawing.Size(189, 27);
@@ -145,6 +147,7 @@
             this.FoodMenu02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu02.TabIndex = 16;
             this.FoodMenu02.TabStop = false;
+            this.FoodMenu02.Click += new System.EventHandler(this.FoodMenu02_Click);
             // 
             // FoodMenu03
             // 
@@ -158,6 +161,7 @@
             this.FoodMenu03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu03.TabIndex = 17;
             this.FoodMenu03.TabStop = false;
+            this.FoodMenu03.Click += new System.EventHandler(this.FoodMenu03_Click);
             // 
             // FoodMenu04
             // 
@@ -169,6 +173,7 @@
             this.FoodMenu04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu04.TabIndex = 18;
             this.FoodMenu04.TabStop = false;
+            this.FoodMenu04.Click += new System.EventHandler(this.FoodMenu04_Click);
             // 
             // FoodMenu05
             // 
@@ -180,17 +185,17 @@
             this.FoodMenu05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu05.TabIndex = 19;
             this.FoodMenu05.TabStop = false;
+            this.FoodMenu05.Click += new System.EventHandler(this.FoodMenu05_Click);
             // 
             // TotalYenLabel
             // 
             this.TotalYenLabel.AutoSize = true;
-            this.TotalYenLabel.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TotalYenLabel.Location = new System.Drawing.Point(547, 614);
+            this.TotalYenLabel.Font = new System.Drawing.Font("MS UI Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TotalYenLabel.Location = new System.Drawing.Point(697, 609);
             this.TotalYenLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TotalYenLabel.Name = "TotalYenLabel";
-            this.TotalYenLabel.Size = new System.Drawing.Size(137, 40);
+            this.TotalYenLabel.Size = new System.Drawing.Size(0, 47);
             this.TotalYenLabel.TabIndex = 21;
-            this.TotalYenLabel.Text = "合計￥";
             // 
             // MenuTab1
             // 
@@ -254,11 +259,11 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.numericUpDown1.Location = new System.Drawing.Point(425, 609);
+            this.numericUpDown1.Font = new System.Drawing.Font("メイリオ", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.numericUpDown1.Location = new System.Drawing.Point(422, 608);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 43);
+            this.numericUpDown1.Size = new System.Drawing.Size(44, 48);
             this.numericUpDown1.TabIndex = 28;
             this.numericUpDown1.TabStop = false;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -273,12 +278,12 @@
             // NumLabel
             // 
             this.NumLabel.AutoSize = true;
-            this.NumLabel.BackColor = System.Drawing.SystemColors.Window;
-            this.NumLabel.Font = new System.Drawing.Font("MS UI Gothic", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.NumLabel.BackColor = System.Drawing.SystemColors.Info;
+            this.NumLabel.Font = new System.Drawing.Font("MS UI Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.NumLabel.Location = new System.Drawing.Point(465, 609);
             this.NumLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NumLabel.Name = "NumLabel";
-            this.NumLabel.Size = new System.Drawing.Size(66, 45);
+            this.NumLabel.Size = new System.Drawing.Size(68, 47);
             this.NumLabel.TabIndex = 29;
             this.NumLabel.Text = "個";
             // 
@@ -346,7 +351,7 @@
             this.MenuName.Margin = new System.Windows.Forms.Padding(4);
             this.MenuName.Multiline = true;
             this.MenuName.Name = "MenuName";
-            this.MenuName.Size = new System.Drawing.Size(353, 44);
+            this.MenuName.Size = new System.Drawing.Size(353, 47);
             this.MenuName.TabIndex = 35;
             this.MenuName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -399,12 +404,38 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // TotalLabel
+            // 
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.Font = new System.Drawing.Font("MS UI Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TotalLabel.Location = new System.Drawing.Point(533, 609);
+            this.TotalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(161, 47);
+            this.TotalLabel.TabIndex = 40;
+            this.TotalLabel.Text = "合計￥";
+            // 
+            // TotalOrderPrice
+            // 
+            this.TotalOrderPrice.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TotalOrderPrice.Enabled = false;
+            this.TotalOrderPrice.Font = new System.Drawing.Font("UD デジタル 教科書体 NP", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TotalOrderPrice.Location = new System.Drawing.Point(1227, 490);
+            this.TotalOrderPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.TotalOrderPrice.Multiline = true;
+            this.TotalOrderPrice.Name = "TotalOrderPrice";
+            this.TotalOrderPrice.Size = new System.Drawing.Size(261, 47);
+            this.TotalOrderPrice.TabIndex = 41;
+            this.TotalOrderPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1519, 845);
+            this.Controls.Add(this.TotalOrderPrice);
+            this.Controls.Add(this.TotalLabel);
             this.Controls.Add(this.Menu04Label);
             this.Controls.Add(this.Menu01Label);
             this.Controls.Add(this.FoodMenu01);
@@ -478,6 +509,8 @@
         public System.Windows.Forms.Label Menu04Label;
         public System.Windows.Forms.Label Menu05Label;
         public System.Windows.Forms.TextBox MenuName;
+        public System.Windows.Forms.Label TotalLabel;
+        public System.Windows.Forms.TextBox TotalOrderPrice;
     }
 }
 

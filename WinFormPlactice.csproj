@@ -86,6 +86,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="battercorn.png" />
+    <Content Include="battercorn_s.png" />
     <Content Include="beefsteak.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -110,12 +112,20 @@
     <Content Include="hamburg_s.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="karaage.png" />
+    <Content Include="karaage_s.png" />
+    <Content Include="minipizza.png" />
+    <Content Include="minipizza_s.png" />
+    <Content Include="onion.png" />
+    <Content Include="onion_s.png" />
     <Content Include="pasta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="pasta_s.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="potat.png" />
+    <Content Include="potat_s.png" />
     <Content Include="サイドメニュータブ.png" />
     <Content Include="デザートメニュータブ.png" />
     <Content Include="デザート向けピンク系背景.png" />
