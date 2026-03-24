@@ -52,7 +52,11 @@ namespace WinFormPlactice
             Menu04Label.Text = menuPrices[3].Name;
             Menu05Label.Text = menuPrices[4].Name;
             numericUpDown1.Value = 1;
-
+            FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[0].Thombnail);
+            FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[1].Thombnail);
+            FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[2].Thombnail);
+            FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[3].Thombnail);
+            FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[4].Thombnail);
         }
 
 
@@ -90,6 +94,9 @@ namespace WinFormPlactice
         private void Menu01Clicked(object sender, System.EventArgs e)
         {
             ReadFromFile();
+            var firstItem = menuPrices[0];
+            MenuName.Text = firstItem.Name;
+            TotalYenLabel.Text = (@"合計￥" + firstItem.Price * numericUpDown1.Value);
         }
         private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
         {

@@ -72,7 +72,7 @@
             // 
             this.MenuBG.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuBG.BackgroundImage")));
             this.MenuBG.Location = new System.Drawing.Point(-11, 84);
-            this.MenuBG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuBG.Margin = new System.Windows.Forms.Padding(4);
             this.MenuBG.Name = "MenuBG";
             this.MenuBG.Size = new System.Drawing.Size(1217, 640);
             this.MenuBG.TabIndex = 7;
@@ -95,7 +95,7 @@
             this.OrderList.FormattingEnabled = true;
             this.OrderList.ItemHeight = 15;
             this.OrderList.Location = new System.Drawing.Point(1215, 134);
-            this.OrderList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OrderList.Margin = new System.Windows.Forms.Padding(4);
             this.OrderList.Name = "OrderList";
             this.OrderList.ScrollAlwaysVisible = true;
             this.OrderList.Size = new System.Drawing.Size(296, 424);
@@ -117,7 +117,7 @@
             // 
             this.ConfirmButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ConfirmButton.Location = new System.Drawing.Point(1248, 696);
-            this.ConfirmButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ConfirmButton.Margin = new System.Windows.Forms.Padding(4);
             this.ConfirmButton.Name = "ConfirmButton";
             this.ConfirmButton.Size = new System.Drawing.Size(240, 140);
             this.ConfirmButton.TabIndex = 8;
@@ -128,7 +128,7 @@
             // 
             this.CallStaffButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CallStaffButton.Location = new System.Drawing.Point(1009, 731);
-            this.CallStaffButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CallStaffButton.Margin = new System.Windows.Forms.Padding(4);
             this.CallStaffButton.Name = "CallStaffButton";
             this.CallStaffButton.Size = new System.Drawing.Size(197, 105);
             this.CallStaffButton.TabIndex = 14;
@@ -139,7 +139,7 @@
             // 
             this.FoodMenu02.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu02.Image")));
             this.FoodMenu02.Location = new System.Drawing.Point(413, 158);
-            this.FoodMenu02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FoodMenu02.Margin = new System.Windows.Forms.Padding(4);
             this.FoodMenu02.Name = "FoodMenu02";
             this.FoodMenu02.Size = new System.Drawing.Size(320, 175);
             this.FoodMenu02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,7 +152,7 @@
             this.FoodMenu03.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu03.Image")));
             this.FoodMenu03.InitialImage = null;
             this.FoodMenu03.Location = new System.Drawing.Point(761, 158);
-            this.FoodMenu03.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FoodMenu03.Margin = new System.Windows.Forms.Padding(4);
             this.FoodMenu03.Name = "FoodMenu03";
             this.FoodMenu03.Size = new System.Drawing.Size(320, 175);
             this.FoodMenu03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +163,7 @@
             // 
             this.FoodMenu04.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu04.Image")));
             this.FoodMenu04.Location = new System.Drawing.Point(59, 381);
-            this.FoodMenu04.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FoodMenu04.Margin = new System.Windows.Forms.Padding(4);
             this.FoodMenu04.Name = "FoodMenu04";
             this.FoodMenu04.Size = new System.Drawing.Size(320, 175);
             this.FoodMenu04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -174,7 +174,7 @@
             // 
             this.FoodMenu05.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu05.Image")));
             this.FoodMenu05.Location = new System.Drawing.Point(413, 381);
-            this.FoodMenu05.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FoodMenu05.Margin = new System.Windows.Forms.Padding(4);
             this.FoodMenu05.Name = "FoodMenu05";
             this.FoodMenu05.Size = new System.Drawing.Size(320, 175);
             this.FoodMenu05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -195,10 +195,9 @@
             // MenuTab1
             // 
             this.MenuTab1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab1.BackgroundImage")));
-
             this.MenuTab1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab1.Location = new System.Drawing.Point(57, 40);
-            this.MenuTab1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuTab1.Margin = new System.Windows.Forms.Padding(4);
             this.MenuTab1.Name = "MenuTab1";
             this.MenuTab1.Size = new System.Drawing.Size(171, 60);
             this.MenuTab1.TabIndex = 23;
@@ -210,7 +209,7 @@
             this.MenuTab2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab2.BackgroundImage")));
             this.MenuTab2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab2.Location = new System.Drawing.Point(217, 40);
-            this.MenuTab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuTab2.Margin = new System.Windows.Forms.Padding(4);
             this.MenuTab2.Name = "MenuTab2";
             this.MenuTab2.Size = new System.Drawing.Size(171, 60);
             this.MenuTab2.TabIndex = 24;
@@ -222,7 +221,7 @@
             this.MenuTab3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab3.BackgroundImage")));
             this.MenuTab3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab3.Location = new System.Drawing.Point(377, 40);
-            this.MenuTab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuTab3.Margin = new System.Windows.Forms.Padding(4);
             this.MenuTab3.Name = "MenuTab3";
             this.MenuTab3.Size = new System.Drawing.Size(171, 60);
             this.MenuTab3.TabIndex = 25;
@@ -234,7 +233,7 @@
             this.MenuTab4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab4.BackgroundImage")));
             this.MenuTab4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab4.Location = new System.Drawing.Point(537, 40);
-            this.MenuTab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuTab4.Margin = new System.Windows.Forms.Padding(4);
             this.MenuTab4.Name = "MenuTab4";
             this.MenuTab4.Size = new System.Drawing.Size(171, 60);
             this.MenuTab4.TabIndex = 26;
@@ -246,7 +245,7 @@
             this.MenuTab5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab5.BackgroundImage")));
             this.MenuTab5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab5.Location = new System.Drawing.Point(697, 40);
-            this.MenuTab5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuTab5.Margin = new System.Windows.Forms.Padding(4);
             this.MenuTab5.Name = "MenuTab5";
             this.MenuTab5.Size = new System.Drawing.Size(171, 60);
             this.MenuTab5.TabIndex = 27;
@@ -257,7 +256,7 @@
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.numericUpDown1.Location = new System.Drawing.Point(425, 609);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(44, 43);
             this.numericUpDown1.TabIndex = 28;
@@ -344,7 +343,7 @@
             this.MenuName.Enabled = false;
             this.MenuName.Font = new System.Drawing.Font("UD デジタル 教科書体 NP", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.MenuName.Location = new System.Drawing.Point(71, 609);
-            this.MenuName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuName.Margin = new System.Windows.Forms.Padding(4);
             this.MenuName.Multiline = true;
             this.MenuName.Name = "MenuName";
             this.MenuName.Size = new System.Drawing.Size(353, 44);
@@ -355,7 +354,7 @@
             // 
             this.NowOrderButton.Font = new System.Drawing.Font("メイリオ", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.NowOrderButton.Location = new System.Drawing.Point(967, 576);
-            this.NowOrderButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NowOrderButton.Margin = new System.Windows.Forms.Padding(4);
             this.NowOrderButton.Name = "NowOrderButton";
             this.NowOrderButton.Size = new System.Drawing.Size(189, 96);
             this.NowOrderButton.TabIndex = 36;
@@ -367,7 +366,7 @@
             // 
             this.OrderedListButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.OrderedListButton.Location = new System.Drawing.Point(1263, 576);
-            this.OrderedListButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OrderedListButton.Margin = new System.Windows.Forms.Padding(4);
             this.OrderedListButton.Name = "OrderedListButton";
             this.OrderedListButton.Size = new System.Drawing.Size(225, 112);
             this.OrderedListButton.TabIndex = 37;
@@ -388,7 +387,7 @@
             // 
             this.FoodMenu01.Image = ((System.Drawing.Image)(resources.GetObject("FoodMenu01.Image")));
             this.FoodMenu01.Location = new System.Drawing.Point(59, 158);
-            this.FoodMenu01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FoodMenu01.Margin = new System.Windows.Forms.Padding(4);
             this.FoodMenu01.Name = "FoodMenu01";
             this.FoodMenu01.Size = new System.Drawing.Size(320, 175);
             this.FoodMenu01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -434,7 +433,7 @@
             this.Controls.Add(this.SeatNoLabel);
             this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.MenuBG);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "ファミレスメニューシミュレータ";
             ((System.ComponentModel.ISupportInitialize)(this.MenuBG)).EndInit();
