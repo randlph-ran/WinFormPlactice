@@ -116,10 +116,10 @@
             // ConfirmButton
             // 
             this.ConfirmButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ConfirmButton.Location = new System.Drawing.Point(1251, 696);
+            this.ConfirmButton.Location = new System.Drawing.Point(1248, 696);
             this.ConfirmButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ConfirmButton.Name = "ConfirmButton";
-            this.ConfirmButton.Size = new System.Drawing.Size(237, 140);
+            this.ConfirmButton.Size = new System.Drawing.Size(240, 140);
             this.ConfirmButton.TabIndex = 8;
             this.ConfirmButton.Text = "注文を確定する";
             this.ConfirmButton.UseVisualStyleBackColor = true;
@@ -127,10 +127,10 @@
             // CallStaffButton
             // 
             this.CallStaffButton.Font = new System.Drawing.Font("UD デジタル 教科書体 N", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CallStaffButton.Location = new System.Drawing.Point(1029, 731);
+            this.CallStaffButton.Location = new System.Drawing.Point(1009, 731);
             this.CallStaffButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CallStaffButton.Name = "CallStaffButton";
-            this.CallStaffButton.Size = new System.Drawing.Size(177, 105);
+            this.CallStaffButton.Size = new System.Drawing.Size(197, 105);
             this.CallStaffButton.TabIndex = 14;
             this.CallStaffButton.Text = "店員を呼ぶ";
             this.CallStaffButton.UseVisualStyleBackColor = true;
@@ -195,7 +195,8 @@
             // MenuTab1
             // 
             this.MenuTab1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab1.BackgroundImage")));
-            this.MenuTab1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+
+            this.MenuTab1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab1.Location = new System.Drawing.Point(57, 40);
             this.MenuTab1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MenuTab1.Name = "MenuTab1";
@@ -207,7 +208,7 @@
             // MenuTab2
             // 
             this.MenuTab2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab2.BackgroundImage")));
-            this.MenuTab2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MenuTab2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab2.Location = new System.Drawing.Point(217, 40);
             this.MenuTab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MenuTab2.Name = "MenuTab2";
@@ -219,7 +220,7 @@
             // MenuTab3
             // 
             this.MenuTab3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab3.BackgroundImage")));
-            this.MenuTab3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MenuTab3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab3.Location = new System.Drawing.Point(377, 40);
             this.MenuTab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MenuTab3.Name = "MenuTab3";
@@ -231,7 +232,7 @@
             // MenuTab4
             // 
             this.MenuTab4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab4.BackgroundImage")));
-            this.MenuTab4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MenuTab4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab4.Location = new System.Drawing.Point(537, 40);
             this.MenuTab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MenuTab4.Name = "MenuTab4";
@@ -243,7 +244,7 @@
             // MenuTab5
             // 
             this.MenuTab5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab5.BackgroundImage")));
-            this.MenuTab5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MenuTab5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab5.Location = new System.Drawing.Point(697, 40);
             this.MenuTab5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MenuTab5.Name = "MenuTab5";
