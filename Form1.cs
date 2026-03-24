@@ -16,7 +16,7 @@ namespace WinFormPlactice
             InitializeComponent();
             menuPrices = new List<Procces.MenuPrice>();
 
-            var menuList = LoadMenuCsv(@"..\..\ShopData.csv") ;
+            var menuList = LoadMenuCsv(@"..\..\ShopData.csv");
 
             foreach (Procces.MenuPrice m in menuList)
             {

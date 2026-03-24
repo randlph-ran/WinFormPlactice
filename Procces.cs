@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -10,10 +9,10 @@ namespace WinFormPlactice
         public class MenuPrice
         {
             public int mID { get; set; }
-            public string Name {  get; set; }
-            public int Price {  get; set; }
+            public string Name { get; set; }
+            public int Price { get; set; }
             public string Img { get; set; }
-            public string Thombnail {  get; set; }
+            public string Thombnail { get; set; }
         }
         public static List<MenuPrice> LoadMenuCsv(string filePath)
         {
