@@ -121,7 +121,7 @@
             this.ConfirmButton.Name = "ConfirmButton";
             this.ConfirmButton.Size = new System.Drawing.Size(240, 140);
             this.ConfirmButton.TabIndex = 8;
-            this.ConfirmButton.Text = "注文を　確定する";
+            this.ConfirmButton.Text = "注文を確定する";
             this.ConfirmButton.UseVisualStyleBackColor = true;
             // 
             // CallStaffButton
@@ -195,6 +195,7 @@
             // MenuTab1
             // 
             this.MenuTab1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTab1.BackgroundImage")));
+
             this.MenuTab1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTab1.Location = new System.Drawing.Point(57, 40);
             this.MenuTab1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
