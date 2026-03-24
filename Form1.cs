@@ -19,8 +19,9 @@ namespace WinFormPlactice
 
             List<MenuPrice> menuList = DataManager.LoadCsv(@"..\..\ShopData.csv");
 
-            int rowCount = menuPrices.Count;
-            int columnCount = typeof(Procces.MenuPrice).GetProperties().Length;
+            numericUpDown1.Value = 1;
+            TotalYenLabel.Text = "0";
+            
             ReadFromFile();
             Menu1Reflesh();
         }
@@ -49,17 +50,49 @@ namespace WinFormPlactice
             MenuName.Text = "";
             switch (menuStatus)
             {
+                case (0):
+                    Menu01Label.Text = menuPrices[0].Name; //デザインで作成したMenu01Labelにファイルから読み込んだ名前を追加
+                    Menu02Label.Text = menuPrices[1].Name;
+                    Menu03Label.Text = menuPrices[2].Name;
+                    Menu04Label.Text = menuPrices[3].Name;
+                    Menu05Label.Text = menuPrices[4].Name;
+                    FoodMenu01.SuspendLayout();
+                    FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[0].Thombnail);
+                    FoodMenu01.ResumeLayout();
+                    FoodMenu02.SuspendLayout();
+                    FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[1].Thombnail);
+                    FoodMenu02.ResumeLayout();
+                    FoodMenu03.SuspendLayout();
+                    FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[2].Thombnail);
+                    FoodMenu03.ResumeLayout();
+                    FoodMenu04.SuspendLayout();
+                    FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[3].Thombnail);
+                    FoodMenu04.ResumeLayout();
+                    FoodMenu05.SuspendLayout();
+                    FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[4].Thombnail);
+                    FoodMenu05.ResumeLayout();
+                    break;
                 case (1):
                     Menu01Label.Text = menuPrices[0].Name; //デザインで作成したMenu01Labelにファイルから読み込んだ名前を追加
                     Menu02Label.Text = menuPrices[1].Name;
                     Menu03Label.Text = menuPrices[2].Name;
                     Menu04Label.Text = menuPrices[3].Name;
                     Menu05Label.Text = menuPrices[4].Name;
+                    FoodMenu01.SuspendLayout();
                     FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[0].Thombnail);
+                    FoodMenu01.ResumeLayout();
+                    FoodMenu02.SuspendLayout();
                     FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[1].Thombnail);
+                    FoodMenu02.ResumeLayout();
+                    FoodMenu03.SuspendLayout();
                     FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[2].Thombnail);
+                    FoodMenu03.ResumeLayout();
+                    FoodMenu04.SuspendLayout();
                     FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[3].Thombnail);
+                    FoodMenu04.ResumeLayout();
+                    FoodMenu05.SuspendLayout();
                     FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[4].Thombnail);
+                    FoodMenu05.ResumeLayout();
                     break;
                 case (2):
                     Menu01Label.Text = menuPrices[5].Name;
@@ -67,11 +100,21 @@ namespace WinFormPlactice
                     Menu03Label.Text = menuPrices[7].Name;
                     Menu04Label.Text = menuPrices[8].Name;
                     Menu05Label.Text = menuPrices[9].Name;
+                    FoodMenu01.SuspendLayout();
                     FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[5].Thombnail);
+                    FoodMenu01.ResumeLayout();
+                    FoodMenu02.SuspendLayout();
                     FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[6].Thombnail);
+                    FoodMenu02.ResumeLayout();
+                    FoodMenu03.SuspendLayout();
                     FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[7].Thombnail);
+                    FoodMenu03.ResumeLayout();
+                    FoodMenu04.SuspendLayout();
                     FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[8].Thombnail);
+                    FoodMenu04.ResumeLayout();
+                    FoodMenu05.SuspendLayout();
                     FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[9].Thombnail);
+                    FoodMenu05.ResumeLayout();
                     break;
                 case (3):
                     Menu01Label.Text = menuPrices[10].Name;
@@ -79,11 +122,21 @@ namespace WinFormPlactice
                     Menu03Label.Text = menuPrices[12].Name;
                     Menu04Label.Text = menuPrices[13].Name;
                     Menu05Label.Text = menuPrices[14].Name;
+                    FoodMenu01.SuspendLayout();
                     FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[10].Thombnail);
+                    FoodMenu01.ResumeLayout();
+                    FoodMenu02.SuspendLayout();
                     FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[11].Thombnail);
+                    FoodMenu02.ResumeLayout();
+                    FoodMenu03.SuspendLayout();
                     FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[12].Thombnail);
+                    FoodMenu03.ResumeLayout();
+                    FoodMenu04.SuspendLayout();
                     FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[13].Thombnail);
+                    FoodMenu04.ResumeLayout();
+                    FoodMenu05.SuspendLayout();
                     FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[14].Thombnail);
+                    FoodMenu05.ResumeLayout();
                     break;
             }
         }
@@ -130,47 +183,130 @@ namespace WinFormPlactice
         private void Menu01Clicked(object sender, System.EventArgs e)
         {
             ReadFromFile();
-            var firstItem = menuPrices[0];
-            MenuName.Text = firstItem.Name;
-            TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            if (menuStatus == 1 || menuStatus == 0)
+            {
+                var firstItem = menuPrices[0];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if (menuStatus == 2)
+            {
+                var firstItem = menuPrices[5];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if (menuStatus == 3)
+            {
+                var firstItem = menuPrices[10];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
         }
         private void FoodMenu02_Click(object sender, EventArgs e)
         {
             ReadFromFile();
-            var firstItem = menuPrices[1];
-            MenuName.Text = firstItem.Name;
-            TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            if (menuStatus == 1 || menuStatus == 0)
+            {
+                var firstItem = menuPrices[1];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if(menuStatus == 2)
+            {
+                var firstItem = menuPrices[6];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if(menuStatus == 3)
+            {
+                var firstItem = menuPrices[11];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
 
         }
         private void FoodMenu03_Click(object sender, EventArgs e)
         {
             ReadFromFile();
-            var firstItem = menuPrices[2];
-            MenuName.Text = firstItem.Name;
-            TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            if (menuStatus == 1 || menuStatus == 0)
+            {
+                var firstItem = menuPrices[2];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+
+            }
+            else if (menuStatus == 2)
+            {
+                var firstItem = menuPrices[7];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if (menuStatus == 3)
+            {
+                var firstItem = menuPrices[12];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
         }
         private void FoodMenu04_Click(object sender, EventArgs e)
         {
             ReadFromFile();
-            var firstItem = menuPrices[3];
-            MenuName.Text = firstItem.Name;
-            TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            if (menuStatus == 1 || menuStatus == 0)
+            {
+                var firstItem = menuPrices[3];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if (menuStatus == 2)
+            {
+                var firstItem = menuPrices[8];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if (menuStatus == 3)
+            {
+                var firstItem = menuPrices[13];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
         }
         private void FoodMenu05_Click(object sender, EventArgs e)
         {
             ReadFromFile();
-            var firstItem = menuPrices[4];
-            MenuName.Text = firstItem.Name;
-            TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            if (menuStatus == 1 || menuStatus == 0)
+            {
+                var firstItem = menuPrices[4];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if (menuStatus == 2)
+            {
+                var firstItem = menuPrices[9];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
+            else if (menuStatus == 3)
+            {
+                var firstItem = menuPrices[14];
+                MenuName.Text = firstItem.Name;
+                TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
+            }
         }
-
 
         private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
         {
             ReadFromFile();
             var firstItem = menuPrices[0];
             int price = firstItem.Price;     // 価格
-            TotalYenLabel.Text = (@"" + int.Parse(TotalYenLabel.Text) * numericUpDown1.Value);
+
+            // 現在の合計値を安全に取得（空や不正値なら 0 とする）
+            int currentTotal = 0;
+            int.TryParse(TotalYenLabel.Text, out currentTotal);
+
+            // numericUpDown1.Value は decimal なので int に変換
+            int qty = (int)numericUpDown1.Value;
+
+            TotalYenLabel.Text = (currentTotal * qty).ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
