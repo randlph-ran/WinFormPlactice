@@ -247,7 +247,7 @@ namespace WinFormPlactice
                 // 2. ファイルに一括書き出し（上書き保存）
                 MessageBox.Show("ありがとうございました。\nレシートをお受け取り下さい。");
                 lines.Add("\n\n---------------------\nご来店ありがとうございました。" +
-                    "\n　　　　　　　　領収書　　　　　　　　\n");
+                    "\n領収書\n");
                 string nowTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 lines.Add(nowTime);
                 lines.Add("---------------------\n");
