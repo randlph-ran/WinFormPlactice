@@ -232,7 +232,7 @@ namespace WinFormPlactice
 
             // 1. ListBoxの全項目を文字列のリストに変換
             List<string> lines = new List<string>();
-            lines.Add("領収書\n");
+            lines.Add("---------------------\n\n領収書\n\n---------------------\n");
             foreach (var item in OrderList.Items)
             {
                 lines.Add(item.ToString());
@@ -247,7 +247,7 @@ namespace WinFormPlactice
                 // 2. ファイルに一括書き出し（上書き保存）
                 MessageBox.Show("ありがとうございました。\nレシートをお受け取り下さい。");
                 lines.Add("\n\n---------------------\nご来店ありがとうございました。" +
-                    "\n領収書\n");
+                    "\n");
                 string nowTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 lines.Add(nowTime);
                 lines.Add("---------------------\n");
