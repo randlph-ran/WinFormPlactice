@@ -295,6 +295,7 @@ namespace WinFormPlactice
             NumLabel.Visible = false;
             NowOrderButton.Visible = false;
             ConfirmButton.Visible = false;
+            TotalOrderPrice.Visible = false;
         }
         /// <summary>
         /// メニュー情報のOnメソッド
@@ -309,6 +310,7 @@ namespace WinFormPlactice
             NumLabel.Visible = true;
             NowOrderButton.Visible = true;
             ConfirmButton.Visible = true;
+            TotalOrderPrice.Visible = true;
         }
         /// <summary>
         /// 料理名と値段の表示メソッド
