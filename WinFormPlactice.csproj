@@ -86,8 +86,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="battercorn.png" />
-    <Content Include="battercorn_s.png" />
+    <Content Include="battercorn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="battercorn_s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="beefsteak.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -106,8 +110,12 @@
     <Content Include="chiken_s.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="coffee.png" />
-    <Content Include="cola.png" />
+    <Content Include="coffee.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cola.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="hamburg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
