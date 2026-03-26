@@ -214,7 +214,7 @@ namespace WinFormPlactice
 
             OrderList.Items.Add(nOrders.oName + " " + nOrders.oNum + "個" + " " + nOrders.tPrice + "円");
 
-            int nPrice = int.Parse(nOrders.tPrice); //* int.Parse(nOrders.oNum);
+            int nPrice = int.Parse(nOrders.tPrice);
 
             ePrice += nPrice;
             TotalOrderPrice.Text = (ePrice.ToString() + "円");
