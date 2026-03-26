@@ -11,7 +11,7 @@
             public string Name { get; set; }
             public int Price { get; set; }
             public string Img { get; set; }
-            public string Thombnail { get; set; }
+            public string Thumbnail { get; set; }
         }
         /// <summary>
         /// 注文カゴに入れた料理のListBoxに入れる情報用

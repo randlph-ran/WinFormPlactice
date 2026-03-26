@@ -16,6 +16,8 @@ namespace WinFormPlactice
         int ePrice = 0;
         //選択しているメニュータブのflag
         static int menuStatus = 1;
+        //選択している料理のflag
+        static int selectedFoodIndex = 0;
 
         public Form1()
         {
@@ -39,6 +41,8 @@ namespace WinFormPlactice
         /// </summary>
         private void ReadFromFile()
         {
+            menuPrices.Clear();//ファイルを読み込む前に、いったんmenuPricesリストを空にする（これがないと、料理画像をクリックするたびにmenuPricesリストに同じ内容がどんどん追加されていってしまうため）
+
             using (System.IO.StreamReader file =
                     new System.IO.StreamReader(@"..\..\ShopData.csv"))
             {
@@ -54,7 +58,7 @@ namespace WinFormPlactice
                     mPrice.mID = int.Parse(data[0]);
                     mPrice.Name = data[1];
                     mPrice.Price = int.Parse(data[2]);
-                    mPrice.Thombnail = data[3];
+                    mPrice.Thumbnail = data[3];
                     mPrice.Img = data[4];
                     //menuPricesリストにmPriceリストを加える
                     menuPrices.Add(mPrice);
@@ -145,32 +149,37 @@ namespace WinFormPlactice
         private void Menu01Clicked(object sender, System.EventArgs e)
         {
             DispON();
-            ReadFromFile();
+            
+            selectedFoodIndex = (menuStatus - 1) * 5 + 0;
             FoodInfo(0);
         }
         private void FoodMenu02_Click(object sender, EventArgs e)
         {
             DispON();
-            ReadFromFile();
+            
+            selectedFoodIndex = (menuStatus - 1) * 5 + 1;
             FoodInfo(1);
 
         }
         private void FoodMenu03_Click(object sender, EventArgs e)
         {
             DispON();
-            ReadFromFile();
+            
+            selectedFoodIndex = (menuStatus - 1) * 5 + 2;
             FoodInfo(2);
         }
         private void FoodMenu04_Click(object sender, EventArgs e)
         {
             DispON();
-            ReadFromFile();
+            
+            selectedFoodIndex = (menuStatus - 1) * 5 + 3;
             FoodInfo(3);
         }
         private void FoodMenu05_Click(object sender, EventArgs e)
         {
             DispON();
-            ReadFromFile();
+            
+            selectedFoodIndex = (menuStatus - 1) * 5 + 4;
             FoodInfo(4);
         }
 
@@ -180,20 +189,21 @@ namespace WinFormPlactice
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
+
         {
+            //数値を切り替えたときに、合計金額の表示も切り替えるための処理
             TotalYenLabel.Visible = true;
-            ReadFromFile();
-            var firstItem = menuPrices[0];
-            int price = firstItem.Price;     // 価格
 
-            // 現在の合計値を安全に取得（空や不正値なら 0 にする）
-            int currentTotal = 0;
-            int.TryParse(TotalYenLabel.Text, out currentTotal);
+            
+            if (menuPrices.Count > selectedFoodIndex)
+            {
+                // 選択されている料理の情報を取得
+                var currentItem = menuPrices[selectedFoodIndex];
+                int price = currentItem.Price;
+                int qty = (int)numericUpDown1.Value;
 
-            // numericUpDown1.Value は decimal なので int に変換
-            int qty = (int)numericUpDown1.Value;
-
-            TotalYenLabel.Text = (currentTotal * qty).ToString();
+                TotalYenLabel.Text = (price * qty).ToString();
+            }
         }
         /// <summary>
         /// 注文カゴListBoxに入れる処理
@@ -232,12 +242,17 @@ namespace WinFormPlactice
 
             // 1. ListBoxの全項目を文字列のリストに変換
             List<string> lines = new List<string>();
+            // 領収書のヘッダーとフッターを追加
             lines.Add("---------------------\n\n領収書\n\n---------------------\n");
+            // ListBoxの各項目をリストに追加
             foreach (var item in OrderList.Items)
             {
                 lines.Add(item.ToString());
             }
+            // 合計金額を追加
+            lines.Add("\n\n---------------------\n合計金額: " + TotalOrderPrice.Text + "\n---------------------\n");
 
+            // 2. サウンド再生とメッセージ表示、そしてファイルへの書き出しをまとめて実行
             try
             {
                 using (var player = new SoundPlayer(@"maou_se_onepoint18.wav"))
@@ -248,13 +263,17 @@ namespace WinFormPlactice
                 MessageBox.Show("ありがとうございました。\nレシートをお受け取り下さい。");
                 lines.Add("\n\n---------------------\nご来店ありがとうございました。" +
                     "\n");
+                // レシート発行日時を追加
                 string nowTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 lines.Add(nowTime);
                 lines.Add("---------------------\n");
                 File.WriteAllLines(filePath, lines);
+                // 3. 注文カゴのクリア
                 OrderList.Items.Clear();
+                // 4. 合計金額のリセット&表示の更新
                 DispClear();
             }
+            // 5. 出力処理でエラーが発生した場合の例外処理
             catch (Exception ex)
             {
                 MessageBox.Show("エラーが発生しました: " + ex.Message);
@@ -283,6 +302,7 @@ namespace WinFormPlactice
 
             MessageBox.Show("店員を呼んでいます。\nお手数ですが、もうしばらくお待ちくださいｍ（＿）ｍ", "店員呼び出し");
         }
+
         /// <summary>
         /// 不要な情報ボックスのOffメソッド
         /// </summary>
@@ -295,7 +315,8 @@ namespace WinFormPlactice
             NumLabel.Visible = false;
             NowOrderButton.Visible = false;
             ConfirmButton.Visible = false;
-            TotalOrderPrice.Visible = false;
+            TotalOrderPrice.Visible = !string.IsNullOrEmpty(TotalOrderPrice.Text);//空なら false、空でないなら true
+ 
         }
         /// <summary>
         /// メニュー情報のOnメソッド
@@ -318,6 +339,11 @@ namespace WinFormPlactice
         /// <param name="foodInfo"></param>
         public void FoodInfo(int foodInfo)
         {
+            // selectedFoodIndex が正しくセットされていれば、switch文なしで1行で書けます
+            var item = menuPrices[selectedFoodIndex];
+            MenuName.Text = item.Name;
+            TotalYenLabel.Text = (item.Price * numericUpDown1.Value).ToString();
+            /*
             switch (menuStatus)
             {
                 case (0):
@@ -350,7 +376,7 @@ namespace WinFormPlactice
                     MenuName.Text = firstItem5.Name;
                     TotalYenLabel.Text = (@"" + firstItem5.Price * numericUpDown1.Value);
                     break;
-            }
+            }*/
         }
         /// <summary>
         /// タブ切り替え時の各種料理画像とテキスト情報の再表示用メソッド 
@@ -364,19 +390,19 @@ namespace WinFormPlactice
             Menu04Label.Text = menuPrices[mReflesh * 5 + 3].Name;
             Menu05Label.Text = menuPrices[mReflesh * 5 + 4].Name;
             FoodMenu01.SuspendLayout(); //いったん画像表示を待つちらつき対策
-            FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5].Thombnail);
+            FoodMenu01.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5].Thumbnail);
             FoodMenu01.ResumeLayout(); //待ち解除
             FoodMenu02.SuspendLayout();
-            FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5 + 1].Thombnail);
+            FoodMenu02.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5 + 1].Thumbnail);
             FoodMenu02.ResumeLayout();
             FoodMenu03.SuspendLayout();
-            FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5 + 2].Thombnail);
+            FoodMenu03.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5 + 2].Thumbnail);
             FoodMenu03.ResumeLayout();
             FoodMenu04.SuspendLayout();
-            FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5 + 3].Thombnail);
+            FoodMenu04.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5 + 3].Thumbnail);
             FoodMenu04.ResumeLayout();
             FoodMenu05.SuspendLayout();
-            FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5 + 4].Thombnail);
+            FoodMenu05.ImageLocation = (@"..\..\img\" + menuPrices[mReflesh * 5 + 4].Thumbnail);
             FoodMenu05.ResumeLayout();
         }
     }
