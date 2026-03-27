@@ -197,8 +197,9 @@
             this.MenuTab1.Name = "MenuTab1";
             this.MenuTab1.Size = new System.Drawing.Size(128, 48);
             this.MenuTab1.TabIndex = 23;
+            this.MenuTab1.Tag = "1";
             this.MenuTab1.UseVisualStyleBackColor = true;
-            this.MenuTab1.Click += new System.EventHandler(this.MenuTab1_Click);
+            this.MenuTab1.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // MenuTab2
             // 
@@ -208,8 +209,9 @@
             this.MenuTab2.Name = "MenuTab2";
             this.MenuTab2.Size = new System.Drawing.Size(128, 48);
             this.MenuTab2.TabIndex = 24;
+            this.MenuTab2.Tag = "2";
             this.MenuTab2.UseVisualStyleBackColor = true;
-            this.MenuTab2.Click += new System.EventHandler(this.MenuTab2_Click);
+            this.MenuTab2.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // MenuTab3
             // 
@@ -219,8 +221,9 @@
             this.MenuTab3.Name = "MenuTab3";
             this.MenuTab3.Size = new System.Drawing.Size(128, 48);
             this.MenuTab3.TabIndex = 25;
+            this.MenuTab3.Tag = "3";
             this.MenuTab3.UseVisualStyleBackColor = true;
-            this.MenuTab3.Click += new System.EventHandler(this.MenuTab3_Click);
+            this.MenuTab3.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // MenuTab4
             // 
@@ -230,8 +233,9 @@
             this.MenuTab4.Name = "MenuTab4";
             this.MenuTab4.Size = new System.Drawing.Size(128, 48);
             this.MenuTab4.TabIndex = 26;
+            this.MenuTab4.Tag = "4";
             this.MenuTab4.UseVisualStyleBackColor = true;
-            this.MenuTab4.Click += new System.EventHandler(this.MenuTab4_Click);
+            this.MenuTab4.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // MenuTab5
             // 
@@ -241,8 +245,9 @@
             this.MenuTab5.Name = "MenuTab5";
             this.MenuTab5.Size = new System.Drawing.Size(128, 48);
             this.MenuTab5.TabIndex = 27;
+            this.MenuTab5.Tag = "5";
             this.MenuTab5.UseVisualStyleBackColor = true;
-            this.MenuTab5.Click += new System.EventHandler(this.MenuTab5_Click);
+            this.MenuTab5.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // numericUpDown1
             // 

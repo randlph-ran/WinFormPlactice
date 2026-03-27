@@ -23,6 +23,16 @@ namespace WinFormPlactice
         // CSVファイルを渡してリポジトリを作る（ファイルの場所はプロジェクトのルートからの相対パスで指定）
         private MenuRepository _repository = new MenuRepository(@"..\..\ShopData.csv");
 
+        private readonly string[] bgImages =
+        {
+            @"..\..\img\肉料理.jpg",
+            @"..\..\img\和食.jpg",
+            @"..\..\img\白ベースのサイドメニュー向け背景.jpg",
+            @"..\..\img\デザート向けピンク系背景.jpg",
+            @"..\..\img\ドリンク向けオレンジ系背景.jpg"
+        };               
+
+
         public Form1()
         {
             InitializeComponent();
@@ -74,6 +84,31 @@ namespace WinFormPlactice
         }
 
 
+        /// <summary>
+        /// メニュータブ（カテゴリ）がクリックされた時の共通処理
+        /// </summary>
+        private void OnMenuTab_Click(object sender, EventArgs e)
+        {
+            // 1. 誰が押されたか特定し、Tagから番号（1〜5）を取得
+            Control tab = (Control)sender;
+            int tabIndex = int.Parse(tab.Tag.ToString());
+
+            // 2. 現在のカテゴリ（menuStatus）を更新
+            menuStatus = tabIndex;
+
+            // 3. 画面の初期化と背景の変更
+            DispClear();
+
+            // 配列のインデックスは0から始まるので -1 する
+            MenuBG.ImageLocation = bgImages[tabIndex - 1];
+
+            // 4. 表示のリフレッシュ
+            Menu1Reflesh();
+        }
+
+        /*
+         * 上記のOnMenuTab_Clickに処理をまとめたため、以下の個別の処理は不要になった
+         *
 
         /// <summary>
         /// 画面上部の料理カテゴリタブをクリックしたときに料理カテゴリ(menuStatus)を切り替える処理
@@ -119,7 +154,7 @@ namespace WinFormPlactice
             MenuBG.ImageLocation = @"..\..\img\ドリンク向けオレンジ系背景.jpg"; //MenuBGの画像を変更
             Menu1Reflesh();
         }
-
+        */
 
         /// <summary>
         /// 料理画像がクリックされた時の共通処理
