@@ -19,52 +19,30 @@ namespace WinFormPlactice
         //選択している料理のflag
         static int selectedFoodIndex = 0;
 
+        //リポジトリをインスタンス化
+        // CSVファイルを渡してリポジトリを作る（ファイルの場所はプロジェクトのルートからの相対パスで指定）
+        private MenuRepository _repository = new MenuRepository(@"..\..\ShopData.csv");
+
         public Form1()
         {
             InitializeComponent();
             //メニュー情報リストの作成
             menuPrices = new List<Process.MenuPrice>();
 
+            // LoadAllの呼び出し
+            // 返ってきたリストを menuPrices に代入する
+            menuPrices = _repository.LoadAll();
+
             //個数選択表示開始
             numericUpDown1.Value = 1;
             //金額表示の初期化
             TotalYenLabel.Text = "";
 
-            //ファイル読み込みメソッドの呼び出し
-            ReadFromFile();
             //メニュー表示内の情報処理メソッドの呼び出し
             Menu1Reflesh();
         }
 
-        /// <summary>
-        /// csvファイルをdata配列に入れ、ｍPriceリストへ代入するメソッド
-        /// </summary>
-        private void ReadFromFile()
-        {
-            menuPrices.Clear();//ファイルを読み込む前に、いったんmenuPricesリストを空にする（これがないと、料理画像をクリックするたびにmenuPricesリストに同じ内容がどんどん追加されていってしまうため）
-
-            using (System.IO.StreamReader file =
-                    new System.IO.StreamReader(@"..\..\ShopData.csv"))
-            {
-                //ファイルの終端まで繰り返し
-                while (!file.EndOfStream)
-                {
-                    //1行読み込んだものを変数lineに代入
-                    string line = file.ReadLine();
-                    //lineに読み込んだ文字列を「,」で区切ってdata配列に入れ込む
-                    string[] data = line.Split(',');
-                    //mPriceリストの作成
-                    Process.MenuPrice mPrice = new Process.MenuPrice();
-                    mPrice.mID = int.Parse(data[0]);
-                    mPrice.Name = data[1];
-                    mPrice.Price = int.Parse(data[2]);
-                    mPrice.Thumbnail = data[3];
-                    mPrice.Img = data[4];
-                    //menuPricesリストにmPriceリストを加える
-                    menuPrices.Add(mPrice);
-                }
-            }
-        }
+        
 
         /// <summary>
         /// 起動直後、または洋食タブを押したときにListの中身を更新
@@ -339,44 +317,11 @@ namespace WinFormPlactice
         /// <param name="foodInfo"></param>
         public void FoodInfo(int foodInfo)
         {
-            // selectedFoodIndex が正しくセットされていれば、switch文なしで1行で書けます
+            // selectedFoodIndexを使えばswitch文なしで1行ですむ
             var item = menuPrices[selectedFoodIndex];
             MenuName.Text = item.Name;
             TotalYenLabel.Text = (item.Price * numericUpDown1.Value).ToString();
-            /*
-            switch (menuStatus)
-            {
-                case (0):
-                    var firstItem = menuPrices[foodInfo];
-                    MenuName.Text = firstItem.Name;
-                    TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-                    break;
-                case (1):
-                    var firstItem1 = menuPrices[foodInfo];
-                    MenuName.Text = firstItem1.Name;
-                    TotalYenLabel.Text = (@"" + firstItem1.Price * numericUpDown1.Value);
-                    break;
-                case (2):
-                    var firstItem2 = menuPrices[foodInfo + 5];
-                    MenuName.Text = firstItem2.Name;
-                    TotalYenLabel.Text = (@"" + firstItem2.Price * numericUpDown1.Value);
-                    break;
-                case (3):
-                    var firstItem3 = menuPrices[foodInfo + 10];
-                    MenuName.Text = firstItem3.Name;
-                    TotalYenLabel.Text = (@"" + firstItem3.Price * numericUpDown1.Value);
-                    break;
-                case (4):
-                    var firstItem4 = menuPrices[foodInfo + 15];
-                    MenuName.Text = firstItem4.Name;
-                    TotalYenLabel.Text = (@"" + firstItem4.Price * numericUpDown1.Value);
-                    break;
-                case (5):
-                    var firstItem5 = menuPrices[foodInfo + 20];
-                    MenuName.Text = firstItem5.Name;
-                    TotalYenLabel.Text = (@"" + firstItem5.Price * numericUpDown1.Value);
-                    break;
-            }*/
+            
         }
         /// <summary>
         /// タブ切り替え時の各種料理画像とテキスト情報の再表示用メソッド 
