@@ -73,6 +73,8 @@ namespace WinFormPlactice
             }
         }
 
+
+
         /// <summary>
         /// 画面上部の料理カテゴリタブをクリックしたときに料理カテゴリ(menuStatus)を切り替える処理
         /// </summary>
@@ -120,6 +122,28 @@ namespace WinFormPlactice
 
 
         /// <summary>
+        /// 料理画像がクリックされた時の共通処理
+        /// </summary>
+        private void OnMenuImage_Click(object sender, EventArgs e)
+        {
+            // 1. 「誰が私を呼んだの？」を特定する
+            // sender を PictureBox 型として扱う（キャスト）
+            PictureBox clickedBox = (PictureBox)sender;
+
+            // 2. そのボタンの「背番号（Tag）」を読み取る
+            // Tag に入れた 0～4 の数字を取り出す
+            int localIndex = int.Parse(clickedBox.Tag.ToString());
+
+            // 3. 共通の計算を行う
+            DispON();
+            selectedFoodIndex = (menuStatus - 1) * 5 + localIndex;
+
+            // 4. 表示を更新する
+            FoodInfo(localIndex);
+        }
+        // 料理画像クリック時の処理（1画面5個の料理画像)を共通化してOnMenuImage_Clickにまとめたため、以下の個別の処理は不要になった
+        /*
+        /// <summary>
         /// 料理画像クリック時の処理（1画面5個の料理画像)
         /// </summary>
         /// <param name="sender"></param>
@@ -159,7 +183,7 @@ namespace WinFormPlactice
             
             selectedFoodIndex = (menuStatus - 1) * 5 + 4;
             FoodInfo(4);
-        }
+        }*/
 
         /// <summary>
         /// numericボタンで数値切り替えた時の処理

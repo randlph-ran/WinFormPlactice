@@ -142,7 +142,8 @@
             this.FoodMenu02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu02.TabIndex = 16;
             this.FoodMenu02.TabStop = false;
-            this.FoodMenu02.Click += new System.EventHandler(this.FoodMenu02_Click);
+            this.FoodMenu02.Tag = "1";
+            this.FoodMenu02.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // FoodMenu03
             // 
@@ -154,7 +155,8 @@
             this.FoodMenu03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu03.TabIndex = 17;
             this.FoodMenu03.TabStop = false;
-            this.FoodMenu03.Click += new System.EventHandler(this.FoodMenu03_Click);
+            this.FoodMenu03.Tag = "2";
+            this.FoodMenu03.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // FoodMenu04
             // 
@@ -164,7 +166,8 @@
             this.FoodMenu04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu04.TabIndex = 18;
             this.FoodMenu04.TabStop = false;
-            this.FoodMenu04.Click += new System.EventHandler(this.FoodMenu04_Click);
+            this.FoodMenu04.Tag = "3";
+            this.FoodMenu04.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // FoodMenu05
             // 
@@ -174,7 +177,8 @@
             this.FoodMenu05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu05.TabIndex = 19;
             this.FoodMenu05.TabStop = false;
-            this.FoodMenu05.Click += new System.EventHandler(this.FoodMenu05_Click);
+            this.FoodMenu05.Tag = "4";
+            this.FoodMenu05.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // TotalYenLabel
             // 
@@ -374,7 +378,8 @@
             this.FoodMenu01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu01.TabIndex = 39;
             this.FoodMenu01.TabStop = false;
-            this.FoodMenu01.Click += new System.EventHandler(this.Menu01Clicked);
+            this.FoodMenu01.Tag = "0";
+            this.FoodMenu01.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // timer1
             // 
