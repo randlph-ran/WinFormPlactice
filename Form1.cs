@@ -178,49 +178,7 @@ namespace WinFormPlactice
             // 4. 表示を更新する
             FoodInfo(localIndex);
         }
-        // 料理画像クリック時の処理（1画面5個の料理画像)を共通化してOnMenuImage_Clickにまとめたため、以下の個別の処理は不要になった
-        /*
-        /// <summary>
-        /// 料理画像クリック時の処理（1画面5個の料理画像)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Menu01Clicked(object sender, System.EventArgs e)
-        {
-            DispON();
-            
-            selectedFoodIndex = (menuStatus - 1) * 5 + 0;
-            FoodInfo(0);
-        }
-        private void FoodMenu02_Click(object sender, EventArgs e)
-        {
-            DispON();
-            
-            selectedFoodIndex = (menuStatus - 1) * 5 + 1;
-            FoodInfo(1);
-
-        }
-        private void FoodMenu03_Click(object sender, EventArgs e)
-        {
-            DispON();
-            
-            selectedFoodIndex = (menuStatus - 1) * 5 + 2;
-            FoodInfo(2);
-        }
-        private void FoodMenu04_Click(object sender, EventArgs e)
-        {
-            DispON();
-            
-            selectedFoodIndex = (menuStatus - 1) * 5 + 3;
-            FoodInfo(3);
-        }
-        private void FoodMenu05_Click(object sender, EventArgs e)
-        {
-            DispON();
-            
-            selectedFoodIndex = (menuStatus - 1) * 5 + 4;
-            FoodInfo(4);
-        }*/
+        
 
         /// <summary>
         /// numericボタンで数値切り替えた時の処理
@@ -266,6 +224,7 @@ namespace WinFormPlactice
             int nPrice = int.Parse(nOrders.tPrice);
 
             ePrice += nPrice;
+            TotalOrderPrice.Visible = true;
             TotalOrderPrice.Text = (ePrice.ToString() + "円");
         }
 
@@ -311,6 +270,9 @@ namespace WinFormPlactice
                 OrderList.Items.Clear();
                 // 4. 合計金額のリセット&表示の更新
                 DispClear();
+                // 5.合計金額のリセット                
+                TotalOrderPrice.Text = "";
+                TotalOrderPrice.Visible = false;
             }
             // 5. 出力処理でエラーが発生した場合の例外処理
             catch (Exception ex)
@@ -399,7 +361,7 @@ namespace WinFormPlactice
             NumLabel.Visible = true;
             NowOrderButton.Visible = true;
             ConfirmButton.Visible = true;
-            TotalOrderPrice.Visible = true;
+            
         }
         /// <summary>
         /// 料理名と値段の表示メソッド
