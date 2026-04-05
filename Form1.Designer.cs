@@ -60,6 +60,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TotalLabel = new System.Windows.Forms.Label();
             this.TotalOrderPrice = new System.Windows.Forms.TextBox();
+            this.MainAnimationBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.MenuBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu03)).BeginInit();
@@ -67,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu05)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu01)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainAnimationBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuBG
@@ -74,7 +76,7 @@
             this.MenuBG.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuBG.BackgroundImage")));
             this.MenuBG.Location = new System.Drawing.Point(-8, 67);
             this.MenuBG.Name = "MenuBG";
-            this.MenuBG.Size = new System.Drawing.Size(913, 512);
+            this.MenuBG.Size = new System.Drawing.Size(913, 476);
             this.MenuBG.TabIndex = 7;
             this.MenuBG.TabStop = false;
             // 
@@ -142,7 +144,8 @@
             this.FoodMenu02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu02.TabIndex = 16;
             this.FoodMenu02.TabStop = false;
-            this.FoodMenu02.Click += new System.EventHandler(this.FoodMenu02_Click);
+            this.FoodMenu02.Tag = "1";
+            this.FoodMenu02.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // FoodMenu03
             // 
@@ -154,7 +157,8 @@
             this.FoodMenu03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu03.TabIndex = 17;
             this.FoodMenu03.TabStop = false;
-            this.FoodMenu03.Click += new System.EventHandler(this.FoodMenu03_Click);
+            this.FoodMenu03.Tag = "2";
+            this.FoodMenu03.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // FoodMenu04
             // 
@@ -164,7 +168,8 @@
             this.FoodMenu04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu04.TabIndex = 18;
             this.FoodMenu04.TabStop = false;
-            this.FoodMenu04.Click += new System.EventHandler(this.FoodMenu04_Click);
+            this.FoodMenu04.Tag = "3";
+            this.FoodMenu04.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // FoodMenu05
             // 
@@ -174,7 +179,8 @@
             this.FoodMenu05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu05.TabIndex = 19;
             this.FoodMenu05.TabStop = false;
-            this.FoodMenu05.Click += new System.EventHandler(this.FoodMenu05_Click);
+            this.FoodMenu05.Tag = "4";
+            this.FoodMenu05.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // TotalYenLabel
             // 
@@ -193,8 +199,9 @@
             this.MenuTab1.Name = "MenuTab1";
             this.MenuTab1.Size = new System.Drawing.Size(128, 48);
             this.MenuTab1.TabIndex = 23;
+            this.MenuTab1.Tag = "1";
             this.MenuTab1.UseVisualStyleBackColor = true;
-            this.MenuTab1.Click += new System.EventHandler(this.MenuTab1_Click);
+            this.MenuTab1.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // MenuTab2
             // 
@@ -204,8 +211,9 @@
             this.MenuTab2.Name = "MenuTab2";
             this.MenuTab2.Size = new System.Drawing.Size(128, 48);
             this.MenuTab2.TabIndex = 24;
+            this.MenuTab2.Tag = "2";
             this.MenuTab2.UseVisualStyleBackColor = true;
-            this.MenuTab2.Click += new System.EventHandler(this.MenuTab2_Click);
+            this.MenuTab2.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // MenuTab3
             // 
@@ -215,8 +223,9 @@
             this.MenuTab3.Name = "MenuTab3";
             this.MenuTab3.Size = new System.Drawing.Size(128, 48);
             this.MenuTab3.TabIndex = 25;
+            this.MenuTab3.Tag = "3";
             this.MenuTab3.UseVisualStyleBackColor = true;
-            this.MenuTab3.Click += new System.EventHandler(this.MenuTab3_Click);
+            this.MenuTab3.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // MenuTab4
             // 
@@ -226,8 +235,9 @@
             this.MenuTab4.Name = "MenuTab4";
             this.MenuTab4.Size = new System.Drawing.Size(128, 48);
             this.MenuTab4.TabIndex = 26;
+            this.MenuTab4.Tag = "4";
             this.MenuTab4.UseVisualStyleBackColor = true;
-            this.MenuTab4.Click += new System.EventHandler(this.MenuTab4_Click);
+            this.MenuTab4.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // MenuTab5
             // 
@@ -237,8 +247,9 @@
             this.MenuTab5.Name = "MenuTab5";
             this.MenuTab5.Size = new System.Drawing.Size(128, 48);
             this.MenuTab5.TabIndex = 27;
+            this.MenuTab5.Tag = "5";
             this.MenuTab5.UseVisualStyleBackColor = true;
-            this.MenuTab5.Click += new System.EventHandler(this.MenuTab5_Click);
+            this.MenuTab5.Click += new System.EventHandler(this.OnMenuTab_Click);
             // 
             // numericUpDown1
             // 
@@ -374,10 +385,12 @@
             this.FoodMenu01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodMenu01.TabIndex = 39;
             this.FoodMenu01.TabStop = false;
-            this.FoodMenu01.Click += new System.EventHandler(this.Menu01Clicked);
+            this.FoodMenu01.Tag = "0";
+            this.FoodMenu01.Click += new System.EventHandler(this.OnMenuImage_Click);
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -405,12 +418,23 @@
             this.TotalOrderPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TotalOrderPrice.Visible = false;
             // 
+            // MainAnimationBox
+            // 
+            this.MainAnimationBox.BackColor = System.Drawing.Color.Transparent;
+            this.MainAnimationBox.Location = new System.Drawing.Point(652, 549);
+            this.MainAnimationBox.Name = "MainAnimationBox";
+            this.MainAnimationBox.Size = new System.Drawing.Size(90, 120);
+            this.MainAnimationBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MainAnimationBox.TabIndex = 42;
+            this.MainAnimationBox.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1139, 676);
+            this.Controls.Add(this.MainAnimationBox);
             this.Controls.Add(this.TotalOrderPrice);
             this.Controls.Add(this.TotalLabel);
             this.Controls.Add(this.Menu04Label);
@@ -450,6 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu05)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodMenu01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainAnimationBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,6 +511,7 @@
         public System.Windows.Forms.TextBox MenuName;
         public System.Windows.Forms.Label TotalLabel;
         public System.Windows.Forms.TextBox TotalOrderPrice;
+        private System.Windows.Forms.PictureBox MainAnimationBox;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace WinFormPlactice
 {
-    internal class Process
+    public class Process
     {
         /// <summary>
         /// メニュー情報のList用クラス

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.IO;
 using System.Media;
 using System.Windows.Forms;
@@ -18,6 +19,21 @@ namespace WinFormPlactice
         static int menuStatus = 1;
         //選択している料理のflag
         static int selectedFoodIndex = 0;
+        static bool CallStaff = false;
+
+        //リポジトリをインスタンス化
+        // CSVファイルを渡してリポジトリを作る（ファイルの場所はプロジェクトのルートからの相対パスで指定）
+        private MenuRepository _repository = new MenuRepository(@"..\..\ShopData.csv");
+
+        private readonly string[] bgImages =
+        {
+            @"..\..\img\肉料理.jpg",
+            @"..\..\img\和食.jpg",
+            @"..\..\img\白ベースのサイドメニュー向け背景.jpg",
+            @"..\..\img\デザート向けピンク系背景.jpg",
+            @"..\..\img\ドリンク向けオレンジ系背景.jpg"
+        };               
+
 
         public Form1()
         {
@@ -25,46 +41,20 @@ namespace WinFormPlactice
             //メニュー情報リストの作成
             menuPrices = new List<Process.MenuPrice>();
 
+            // LoadAllの呼び出し
+            // 返ってきたリストを menuPrices に代入する
+            menuPrices = _repository.LoadAll();
+
             //個数選択表示開始
             numericUpDown1.Value = 1;
             //金額表示の初期化
             TotalYenLabel.Text = "";
 
-            //ファイル読み込みメソッドの呼び出し
-            ReadFromFile();
             //メニュー表示内の情報処理メソッドの呼び出し
             Menu1Reflesh();
         }
 
-        /// <summary>
-        /// csvファイルをdata配列に入れ、ｍPriceリストへ代入するメソッド
-        /// </summary>
-        private void ReadFromFile()
-        {
-            menuPrices.Clear();//ファイルを読み込む前に、いったんmenuPricesリストを空にする（これがないと、料理画像をクリックするたびにmenuPricesリストに同じ内容がどんどん追加されていってしまうため）
-
-            using (System.IO.StreamReader file =
-                    new System.IO.StreamReader(@"..\..\ShopData.csv"))
-            {
-                //ファイルの終端まで繰り返し
-                while (!file.EndOfStream)
-                {
-                    //1行読み込んだものを変数lineに代入
-                    string line = file.ReadLine();
-                    //lineに読み込んだ文字列を「,」で区切ってdata配列に入れ込む
-                    string[] data = line.Split(',');
-                    //mPriceリストの作成
-                    Process.MenuPrice mPrice = new Process.MenuPrice();
-                    mPrice.mID = int.Parse(data[0]);
-                    mPrice.Name = data[1];
-                    mPrice.Price = int.Parse(data[2]);
-                    mPrice.Thumbnail = data[3];
-                    mPrice.Img = data[4];
-                    //menuPricesリストにmPriceリストを加える
-                    menuPrices.Add(mPrice);
-                }
-            }
-        }
+        
 
         /// <summary>
         /// 起動直後、または洋食タブを押したときにListの中身を更新
@@ -94,6 +84,33 @@ namespace WinFormPlactice
                     break;
             }
         }
+
+
+        /// <summary>
+        /// メニュータブ（カテゴリ）がクリックされた時の共通処理
+        /// </summary>
+        private void OnMenuTab_Click(object sender, EventArgs e)
+        {
+            // 1. 誰が押されたか特定し、Tagから番号（1〜5）を取得
+            Control tab = (Control)sender;
+            int tabIndex = int.Parse(tab.Tag.ToString());
+
+            // 2. 現在のカテゴリ（menuStatus）を更新
+            menuStatus = tabIndex;
+
+            // 3. 画面の初期化と背景の変更
+            DispClear();
+
+            // 配列のインデックスは0から始まるので -1 する
+            MenuBG.ImageLocation = bgImages[tabIndex - 1];
+
+            // 4. 表示のリフレッシュ
+            Menu1Reflesh();
+        }
+
+        /*
+         * 上記のOnMenuTab_Clickに処理をまとめたため、以下の個別の処理は不要になった
+         *
 
         /// <summary>
         /// 画面上部の料理カテゴリタブをクリックしたときに料理カテゴリ(menuStatus)を切り替える処理
@@ -139,8 +156,30 @@ namespace WinFormPlactice
             MenuBG.ImageLocation = @"..\..\img\ドリンク向けオレンジ系背景.jpg"; //MenuBGの画像を変更
             Menu1Reflesh();
         }
+        */
 
+        /// <summary>
+        /// 料理画像がクリックされた時の共通処理
+        /// </summary>
+        private void OnMenuImage_Click(object sender, EventArgs e)
+        {
+            // 1. 「誰が私を呼んだの？」を特定する
+            // sender を PictureBox 型として扱う（キャスト）
+            PictureBox clickedBox = (PictureBox)sender;
 
+            // 2. そのボタンの「背番号（Tag）」を読み取る
+            // Tag に入れた 0～4 の数字を取り出す
+            int localIndex = int.Parse(clickedBox.Tag.ToString());
+
+            // 3. 共通の計算を行う
+            DispON();
+            selectedFoodIndex = (menuStatus - 1) * 5 + localIndex;
+
+            // 4. 表示を更新する
+            FoodInfo(localIndex);
+        }
+        // 料理画像クリック時の処理（1画面5個の料理画像)を共通化してOnMenuImage_Clickにまとめたため、以下の個別の処理は不要になった
+        /*
         /// <summary>
         /// 料理画像クリック時の処理（1画面5個の料理画像)
         /// </summary>
@@ -181,7 +220,7 @@ namespace WinFormPlactice
             
             selectedFoodIndex = (menuStatus - 1) * 5 + 4;
             FoodInfo(4);
-        }
+        }*/
 
         /// <summary>
         /// numericボタンで数値切り替えた時の処理
@@ -280,27 +319,56 @@ namespace WinFormPlactice
             }
         }
 
+
+        private int animeIndex = 0;
+        private readonly string[] animeImages = {
+            @"..\..\img\sera0.png",
+            @"..\..\img\sera1.png",
+            @"..\..\img\sera2.png"
+        };
+
+
         /// <summary>
-        /// 使うつもりがまったく使わなかったため残っている空のタイマーイベント
+        /// TimerのTickイベント（タイマーが鳴るたびに呼ばれる）
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // 次の画像へ（3枚なので 0→1→2→0... とループさせる）
+            animeIndex = (animeIndex + 1) % animeImages.Length;
+            // PictureBox（例：MainAnimationBox）に画像を表示
+            if (CallStaff == true)
+            {
+                MainAnimationBox.Visible = true;
+                MainAnimationBox.SuspendLayout();
+                MainAnimationBox.ImageLocation = animeImages[animeIndex];
+                MainAnimationBox.ResumeLayout();
+            }
+            
         }
         /// <summary>
         /// 呼び出しボタンで表示するメッセージ表示
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CallStaffButton_Click(object sender, EventArgs e)
+        public void CallStaffButton_Click(object sender, EventArgs e)
         {
             using (var player = new SoundPlayer(@"maou_se_chime12.wav"))
             {
                 player.Play();
             }
-
-            MessageBox.Show("店員を呼んでいます。\nお手数ですが、もうしばらくお待ちくださいｍ（＿）ｍ", "店員呼び出し");
+            if(CallStaff == false)
+            {
+                MessageBox.Show("店員を呼んでいます。\nお手数ですが、もうしばらくお待ちくださいｍ（＿）ｍ", "店員呼び出し");
+                CallStaff = true;
+            }
+            else
+            {
+                MessageBox.Show("お待たせしました。いかがなさいましたでしょうか？", "店員が状況を確認させていただいております。");
+                CallStaff = false;
+                MainAnimationBox.Visible = false;
+            }            
         }
 
         /// <summary>
@@ -339,44 +407,11 @@ namespace WinFormPlactice
         /// <param name="foodInfo"></param>
         public void FoodInfo(int foodInfo)
         {
-            // selectedFoodIndex が正しくセットされていれば、switch文なしで1行で書けます
+            // selectedFoodIndexを使えばswitch文なしで1行ですむ
             var item = menuPrices[selectedFoodIndex];
             MenuName.Text = item.Name;
             TotalYenLabel.Text = (item.Price * numericUpDown1.Value).ToString();
-            /*
-            switch (menuStatus)
-            {
-                case (0):
-                    var firstItem = menuPrices[foodInfo];
-                    MenuName.Text = firstItem.Name;
-                    TotalYenLabel.Text = (@"" + firstItem.Price * numericUpDown1.Value);
-                    break;
-                case (1):
-                    var firstItem1 = menuPrices[foodInfo];
-                    MenuName.Text = firstItem1.Name;
-                    TotalYenLabel.Text = (@"" + firstItem1.Price * numericUpDown1.Value);
-                    break;
-                case (2):
-                    var firstItem2 = menuPrices[foodInfo + 5];
-                    MenuName.Text = firstItem2.Name;
-                    TotalYenLabel.Text = (@"" + firstItem2.Price * numericUpDown1.Value);
-                    break;
-                case (3):
-                    var firstItem3 = menuPrices[foodInfo + 10];
-                    MenuName.Text = firstItem3.Name;
-                    TotalYenLabel.Text = (@"" + firstItem3.Price * numericUpDown1.Value);
-                    break;
-                case (4):
-                    var firstItem4 = menuPrices[foodInfo + 15];
-                    MenuName.Text = firstItem4.Name;
-                    TotalYenLabel.Text = (@"" + firstItem4.Price * numericUpDown1.Value);
-                    break;
-                case (5):
-                    var firstItem5 = menuPrices[foodInfo + 20];
-                    MenuName.Text = firstItem5.Name;
-                    TotalYenLabel.Text = (@"" + firstItem5.Price * numericUpDown1.Value);
-                    break;
-            }*/
+            
         }
         /// <summary>
         /// タブ切り替え時の各種料理画像とテキスト情報の再表示用メソッド 
