@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.IO;
 using System.Media;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace WinFormPlactice
         static int menuStatus = 1;
         //選択している料理のflag
         static int selectedFoodIndex = 0;
+        static bool CallStaff = false;
 
         //リポジトリをインスタンス化
         // CSVファイルを渡してリポジトリを作る（ファイルの場所はプロジェクトのルートからの相対パスで指定）
@@ -317,27 +319,56 @@ namespace WinFormPlactice
             }
         }
 
+
+        private int animeIndex = 0;
+        private readonly string[] animeImages = {
+            @"..\..\img\sera0.png",
+            @"..\..\img\sera1.png",
+            @"..\..\img\sera2.png"
+        };
+
+
         /// <summary>
-        /// 使うつもりがまったく使わなかったため残っている空のタイマーイベント
+        /// TimerのTickイベント（タイマーが鳴るたびに呼ばれる）
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // 次の画像へ（3枚なので 0→1→2→0... とループさせる）
+            animeIndex = (animeIndex + 1) % animeImages.Length;
+            // PictureBox（例：MainAnimationBox）に画像を表示
+            if (CallStaff == true)
+            {
+                MainAnimationBox.Visible = true;
+                MainAnimationBox.SuspendLayout();
+                MainAnimationBox.ImageLocation = animeImages[animeIndex];
+                MainAnimationBox.ResumeLayout();
+            }
+            
         }
         /// <summary>
         /// 呼び出しボタンで表示するメッセージ表示
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CallStaffButton_Click(object sender, EventArgs e)
+        public void CallStaffButton_Click(object sender, EventArgs e)
         {
             using (var player = new SoundPlayer(@"maou_se_chime12.wav"))
             {
                 player.Play();
             }
-
-            MessageBox.Show("店員を呼んでいます。\nお手数ですが、もうしばらくお待ちくださいｍ（＿）ｍ", "店員呼び出し");
+            if(CallStaff == false)
+            {
+                MessageBox.Show("店員を呼んでいます。\nお手数ですが、もうしばらくお待ちくださいｍ（＿）ｍ", "店員呼び出し");
+                CallStaff = true;
+            }
+            else
+            {
+                MessageBox.Show("お待たせしました。いかがなさいましたでしょうか？", "店員が状況を確認させていただいております。");
+                CallStaff = false;
+                MainAnimationBox.Visible = false;
+            }            
         }
 
         /// <summary>
