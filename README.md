@@ -27,7 +27,7 @@
 
 ## 仕様 <a id="specification"></a>
 |https://github.com/randlph-ran/WinFormPlactice/blob/main/%E4%BC%81%E7%94%BB%E6%9B%B8%EF%BC%86%E4%BB%95%E6%A7%98%E6%9B%B8/%E7%9C%9F%E4%BB%95%E6%A7%98%E6%9B%B82.xlsx|
-※同フォルダには古い仕様も残っているが、こちらが最新
+ - 同フォルダには古い仕様も残っているが、こちらが最新
 
 ## AI利用の有無 <a id="use-of-ai"></a>
  - csvファイルの読み込み方を教えてもらった
